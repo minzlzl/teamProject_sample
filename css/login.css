@@ -8,6 +8,10 @@ ul, li, p, h1, h2, h3, figure {
   padding: 0;
 }
 
+figure {
+  font-size: 0;
+}
+
 .login_wrap {
   background: url("./../imgs/bg.png");
   background-repeat: no-repeat;
@@ -23,8 +27,31 @@ ul, li, p, h1, h2, h3, figure {
   justify-content: center;
   align-items: center;
 }
+.login_wrap .login_con1_wrap .con1 figure {
+  text-align: center;
+  position: relative;
+  bottom: 12%;
+}
+.login_wrap .login_con1_wrap .con1 figure img {
+  width: 80%;
+}
 .login_wrap .login_con1_wrap .con1_txt {
   position: absolute;
-  bottom: 20px;
-  left: 0;
+  bottom: 0;
+  left: 20px;
+  cursor: pointer;
+}
+.login_wrap .login_con1_wrap .con1_txt figure {
+  text-align: center;
+}
+.login_wrap .login_con1_wrap .con1_txt figure img {
+  width: 85%;
+}
+.login_wrap .login_con1_wrap .con1_txt p {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+}
+.login_wrap .login_con2_wrap {
+  display: none;
 }/*# sourceMappingURL=login.css.map */

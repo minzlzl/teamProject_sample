@@ -14,9 +14,24 @@
       </div>
       <div class="con1_txt">
         <figure><img src="./imgs/con1_txt_box.png" alt=""></figure>
-        <!-- <p>안녕 블라블라~~</p> -->
+        <p>안녕 블라블라~~</p>
       </div>
     </div>
+
+    <div class="login_con2_wrap">
+      블리블리발랄라ㅏㄹ아아
+    </div>
   </div>
+
+  <script>
+    const con1Txt = document.querySelector('.con1_txt'),
+            con1Wrap = document.querySelector('.login_con1_wrap'),
+            con2Wrap = document.querySelector('.login_con2_wrap')
+
+    con1Txt.onclick = function(){
+      con1Wrap.style = `display:none`
+      con2Wrap.style = `display:block`
+    }
+  </script>
 </body>
 </html>

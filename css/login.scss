@@ -1,5 +1,6 @@
 body{width:640px; margin:0 auto;}
 ul,li,p,h1,h2,h3,figure{margin:0; padding:0;}
+figure{font-size: 0;}
 
 
 .login_wrap{
@@ -14,11 +15,34 @@ ul,li,p,h1,h2,h3,figure{margin:0; padding:0;}
       display: flex;
       justify-content: center;
       align-items: center;
+      figure{
+        text-align: center;
+        position: relative;
+        bottom:12%;
+        img{
+          width:80%;
+        }
+      }
     }
     .con1_txt{
       position: absolute;
-      bottom: 20px;
-      left: 0;
+      bottom: 0;
+      left: 20px;
+      cursor: pointer;
+      figure{
+        text-align: center;
+        img{
+          width:85%;
+        }
+      }
+      p{
+        position: absolute;
+        top: 90px;
+        left: 100px
+      }
     }
+  }
+  .login_con2_wrap{
+    display: none;
   }
 }
