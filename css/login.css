@@ -17,12 +17,13 @@ figure {
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
 }
 .login_wrap video {
   position: relative;
   height: 100vh;
   width: auto;
-  transform: translateX(-33%);
+  transform: translateX(-36%);
 }
 .login_wrap > figure {
   max-width: 640px;
@@ -59,14 +60,14 @@ figure {
   left: 90px;
 }
 .login_wrap .login_con1_wrap .con1 .dot img {
-  width: 60%;
+  width: 70%;
 }
 .login_wrap .login_con1_wrap .con1 .agumon {
   text-align: center;
   z-index: 1;
 }
 .login_wrap .login_con1_wrap .con1 .agumon img {
-  width: 70%;
+  width: 80%;
   animation: 0.5s agumon linear 0s infinite alternate;
   transform: translateY(0);
 }
@@ -81,7 +82,7 @@ figure {
   text-align: center;
 }
 .login_wrap .login_con1_wrap .con1 .tornado img {
-  width: 70%;
+  width: 80%;
 }
 .login_wrap .login_con1_wrap .con1_txt {
   position: absolute;
@@ -110,9 +111,31 @@ figure {
 }
 .login_wrap .login_con1_wrap .con1_txt p {
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   position: absolute;
   top: 32%;
   left: 12%;
   text-shadow: 2px 2px 0px #346df8;
+}
+.login_wrap .login_con1_wrap .con1_txt .typing_txt {
+  display: none;
+}
+.login_wrap .login_con1_wrap .con1_txt .typing {
+  display: inline-block;
+}
+.login_wrap .login_con1_wrap .con1_txt .typing:nth-of-type(4) {
+  position: absolute;
+  top: 43%;
+}
+.login_wrap .login_con2_wrap {
+  display: none;
+  max-width: 640px;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+}
+.login_wrap .login_con2_wrap .con2_txt {
+  display: flex;
 }

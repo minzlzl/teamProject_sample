@@ -8,11 +8,12 @@ figure{font-size: 0;}
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
   video{
     position: relative;
     height: 100vh;
     width: auto;
-    transform: translateX(-33%);
+    transform: translateX(-36%);
   }
   >figure{
     max-width: 640px;
@@ -47,16 +48,14 @@ figure{font-size: 0;}
         position: relative;
         left: 90px;
         img{
-          width: 60%;
+          width: 70%;
         }
       }
       .agumon{
         text-align: center;
         z-index: 1;
-        
-        
         img{
-          width:70%;
+          width:80%;
           animation: .5s agumon linear 0s infinite alternate;
           transform: translateY(0);
           @keyframes agumon{
@@ -69,17 +68,9 @@ figure{font-size: 0;}
         top: -60px;
         text-align: center;
         img{
-          width:70%;
+          width:80%;
         }
       }
-      // figure{
-      //   text-align: center;
-      //   position: relative;
-      //   bottom:5%;
-      //   img{
-      //     width:80%;
-      //   }
-      // }
     }
     .con1_txt{
       position: absolute;
@@ -107,15 +98,42 @@ figure{font-size: 0;}
       }
       p{
         color:#fff;
-        font-size: 18px;
+        font-size: 22px;
         position: absolute;
         top: 32%;
         left: 12%;
         text-shadow:2px 2px 0px #346df8;
+        
+      }
+      .typing_txt{
+        display: none;
+      }
+      .typing{
+        display: inline-block; 
+        // animation: 0.3s typings infinite;
+        // @keyframes typings{ 
+        //   0%{border-right: 1px solid #fff} 
+        //   50%{border-right: 1px solid #000} 
+        //   100%{border-right: 1px solid #fff} 
+        // } 
+        &:nth-of-type(4){
+          position: absolute;
+          top:43%;
+        }
       }
     }
   }
-  // .login_con2_wrap{
-  //   display: none;
-  // }
+  .login_con2_wrap{
+    display: none;
+    max-width: 640px;
+    margin: 0 auto;
+    height: 100vh;
+    width:100%;
+    position: absolute;
+    top:30px;
+    .con2_txt{
+      display: flex;
+
+    }
+  }
 }
