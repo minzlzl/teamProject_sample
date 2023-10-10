@@ -52,14 +52,36 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.login_wrap .login_con1_wrap .con1 figure {
-  text-align: center;
+.login_wrap .login_con1_wrap .con1 .dot {
   position: relative;
-  bottom: 5%;
+  left: 90px;
 }
-.login_wrap .login_con1_wrap .con1 figure img {
-  width: 80%;
+.login_wrap .login_con1_wrap .con1 .dot img {
+  width: 60%;
+}
+.login_wrap .login_con1_wrap .con1 .agumon {
+  text-align: center;
+  z-index: 1;
+}
+.login_wrap .login_con1_wrap .con1 .agumon img {
+  width: 70%;
+  animation: 0.5s agumon linear 0s infinite alternate;
+  transform: translateY(0);
+}
+@keyframes agumon {
+  100% {
+    transform: translateY(10px);
+  }
+}
+.login_wrap .login_con1_wrap .con1 .tornado {
+  position: relative;
+  top: -60px;
+  text-align: center;
+}
+.login_wrap .login_con1_wrap .con1 .tornado img {
+  width: 70%;
 }
 .login_wrap .login_con1_wrap .con1_txt {
   position: absolute;
@@ -88,7 +110,7 @@ figure {
 }
 .login_wrap .login_con1_wrap .con1_txt p {
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   position: absolute;
   top: 32%;
   left: 12%;

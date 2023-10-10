@@ -42,14 +42,44 @@ figure{font-size: 0;}
       display: flex;
       justify-content: center;
       align-items: center;
-      figure{
-        text-align: center;
+      flex-direction: column;
+      .dot{
         position: relative;
-        bottom:5%;
+        left: 90px;
         img{
-          width:80%;
+          width: 60%;
         }
       }
+      .agumon{
+        text-align: center;
+        z-index: 1;
+        
+        
+        img{
+          width:70%;
+          animation: .5s agumon linear 0s infinite alternate;
+          transform: translateY(0);
+          @keyframes agumon{
+            100%{transform: translateY(10px);}
+          }
+        }
+      }
+      .tornado{
+        position: relative;
+        top: -60px;
+        text-align: center;
+        img{
+          width:70%;
+        }
+      }
+      // figure{
+      //   text-align: center;
+      //   position: relative;
+      //   bottom:5%;
+      //   img{
+      //     width:80%;
+      //   }
+      // }
     }
     .con1_txt{
       position: absolute;
@@ -77,7 +107,7 @@ figure{font-size: 0;}
       }
       p{
         color:#fff;
-        font-size: 22px;
+        font-size: 18px;
         position: absolute;
         top: 32%;
         left: 12%;
