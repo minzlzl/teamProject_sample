@@ -169,6 +169,7 @@ figure{font-size: 0;}
         }
       }
       >figure{
+        position: relative;
         img{
           width:100%;
         }
@@ -176,8 +177,8 @@ figure{font-size: 0;}
           color: #fff;
           font-size: 18px;
           position: absolute;
-          top: 10.5%;
-          left: 48%;
+          top: 35%;
+          left: 15%;
           text-shadow: 2px 2px 0px #346df8;
         }
         .typing_txt2{
@@ -221,7 +222,8 @@ figure{font-size: 0;}
         color:#d9d9d9;
         font-size: 24px;
         position: absolute;
-        top: 0;
+        top:50%;
+        left:10%;
       }
     }
   }
