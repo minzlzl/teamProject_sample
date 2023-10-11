@@ -57,10 +57,11 @@ figure {
 }
 .login_wrap .login_con1_wrap .con1 .dot {
   position: relative;
-  left: 90px;
+  left: 80px;
+  text-align: center;
 }
 .login_wrap .login_con1_wrap .con1 .dot img {
-  width: 70%;
+  width: 40%;
 }
 .login_wrap .login_con1_wrap .con1 .agumon {
   text-align: center;
@@ -109,7 +110,10 @@ figure {
     margin-top: 5px;
   }
 }
-.login_wrap .login_con1_wrap .con1_txt p {
+.login_wrap .login_con1_wrap .con1_txt .typing_txt {
+  display: none;
+}
+.login_wrap .login_con1_wrap .con1_txt .typing {
   color: #fff;
   font-size: 22px;
   position: absolute;
@@ -117,15 +121,25 @@ figure {
   left: 12%;
   text-shadow: 2px 2px 0px #346df8;
 }
-.login_wrap .login_con1_wrap .con1_txt .typing_txt {
-  display: none;
+.login_wrap .login_con1_wrap .con1_txt .typing ul li {
+  display: block;
 }
-.login_wrap .login_con1_wrap .con1_txt .typing {
+.login_wrap .login_con1_wrap .con1_txt .typing ul li.on {
   display: inline-block;
+  animation-name: cursor;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
 }
-.login_wrap .login_con1_wrap .con1_txt .typing:nth-of-type(4) {
-  position: absolute;
-  top: 43%;
+@keyframes cursor {
+  0% {
+    border-right: 1px solid #fff;
+  }
+  50% {
+    border-right: 1px solid #000;
+  }
+  100% {
+    border-right: 1px solid #fff;
+  }
 }
 .login_wrap .login_con2_wrap {
   display: none;
@@ -181,4 +195,48 @@ figure {
   top: 10.5%;
   left: 48%;
   text-shadow: 2px 2px 0px #346df8;
+}
+.login_wrap .login_con2_wrap .con2_txt > figure .typing_txt2 {
+  display: none;
+}
+.login_wrap .login_con2_wrap .con2_txt > figure .typing2 {
+  display: inline-block;
+  animation-name: cursor;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+}
+@keyframes cursor {
+  0% {
+    border-right: 1px solid #fff;
+  }
+  50% {
+    border-right: 1px solid #000;
+  }
+  100% {
+    border-right: 1px solid #fff;
+  }
+}
+.login_wrap .login_con2_wrap .character {
+  max-width: 95%;
+}
+.login_wrap .login_con2_wrap .character .swiper-wrapper {
+  text-align: center;
+}
+.login_wrap .login_con2_wrap .character .swiper-button-next::after {
+  content: none;
+}
+.login_wrap .login_con2_wrap .character .swiper-button-prev::after {
+  content: none;
+}
+.login_wrap .login_con2_wrap .user_name {
+  position: relative;
+}
+.login_wrap .login_con2_wrap .user_name figure {
+  text-align: center;
+}
+.login_wrap .login_con2_wrap .user_name p {
+  color: #d9d9d9;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
 }

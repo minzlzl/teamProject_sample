@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="./css/login.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./js/login.js"></script>
+  <script defer src="./js/typing.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <title>Document</title>
 </head>
 <body>
@@ -17,63 +19,27 @@
     <figure><img src="./imgs/bg.png" alt=""></figure>
     <div class="login_con1_wrap">
       <div class="con1">
-        <figure class="dot"><img src="./imgs/dotdotdot.png" alt=""></figure>
+        <figure class="dot"><img src="./imgs/dotdotdot.gif" alt=""></figure>
         <figure class="agumon"><img src="./imgs/agumon.png" alt=""></figure>
         <figure class="tornado"><img src="./imgs/tornado.png" alt=""></figure>
       </div>
       <div class="con1_txt">
         <figure><img src="./imgs/con1_txt_box.png" alt=""></figure>
         <figure><img src="./imgs/arrow.png" alt=""></figure>
-        <p class="typing_txt">안녕? 디지털 월드에 온걸 환영해!</p>
-        <p class="typing"></p>
-        <p class="typing_txt">너에 대해서 알려줄래?</p>
-        <p class="typing"></p>
+        <div class="typing_txt">
+          <ul>
+            <li>안녕? 디지털 월드에 온걸 환영해!</li>
+            <li>너에 대해서 알려줄래?</li>
+          </ul>
+        </div>
+        <div class="typing">
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <script>
-      var typingBool = false; 
-      var typingIdx=0; 
-
-
-      $(".typing_txt").each((k,v)=>{
-        const typingTxt= $(v).text().split("");
-        switch(k){
-          case 0 : 
-              if(typingBool==false){ 
-                // 타이핑이 진행되지 않았다면 
-                typingBool=true;     
-                var tyInt = setInterval(typing,100); // 반복동작 
-              }  
-          break;
-          case 1 :
-              setTimeout(()=>{
-                typingBool = false; typingIdx=0;
-              if(typingBool==false){ 
-                // 타이핑이 진행되지 않았다면 
-                typingBool=true;     
-                var tyInt = setInterval(typing,100); // 반복동작 
-              } 
-              },2300)
-          break;
-        }
-        function typing(){ 
-        if(typingIdx<typingTxt.length){ 
-          // 타이핑될 텍스트 길이만큼 반복 
-          $(".typing").eq(k).append(typingTxt[typingIdx]);
-          // 한글자씩 이어준다. 
-          typingIdx++; 
-        } else{ 
-          //끝나면 반복종료 
-          clearInterval(tyInt); 
-        } 
-      }
-
-
-      })
-
-      
-    </script>
-
     <div class="login_con2_wrap">
       <div class="con2_txt">
         <div class="combine">
@@ -82,32 +48,47 @@
         </div>
         <figure>
           <img src="./imgs/con2_txt_box.png" alt="">
-          <p>캐릭터를 고르고 닉네임을 지어줘!</p>
+          <p class="typing_txt2">캐릭터를 고르고 닉네임을 지어줘!</p>
+          <p class="typing2"></p>
         </figure>
       </div>
-      <div class="character"></div>
+      <div class="swiper mySwiper character">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./imgs/character1.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character2.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character3.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character4.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character5.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character6.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character7.png" alt=""></div>
+          <div class="swiper-slide"><img src="./imgs/character8.png" alt=""></div>
+        </div>
+        <div class="swiper-button-next"><img src="./imgs/next.png" alt=""></div>
+        <div class="swiper-button-prev"><img src="./imgs/prev.png" alt=""></div>
+      </div>
       <div class="user_name">
         <figure><img src="./imgs/user_name.png" alt=""></figure>
         <p>닉네임을 입력해주세요.</p>
+      </div>
+      <div class="create">
+        <figure><img src="./imgs/create.png" alt=""></figure>
+        <p>생성하기</p>
       </div>
     </div>
   </div>
 
 
 
-
-
-
-  
-  <!-- <script>
-    const con1Txt = document.querySelector('.con1_txt'),
-            con1Wrap = document.querySelector('.login_con1_wrap'),
-            con2Wrap = document.querySelector('.login_con2_wrap')
-
-    con1Txt.onclick = function(){
-      con1Wrap.style = `display:none`
-      con2Wrap.style = `display:block`
-    }
-  </script> -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 </html>
