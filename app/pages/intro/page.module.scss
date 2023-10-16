@@ -1,0 +1,99 @@
+
+.main_intro {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 24px;
+  height: 100vh;
+  position: relative;
+
+  .bg_video{
+    max-width: 640px;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .main_logo{
+    &.bg{background: url('/img/member/join/bg_.png') no-repeat;}
+    background-size: cover;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    >img{
+      margin: 0 auto;
+      width: 70%;
+    } 
+    .loadfirst{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom:40px;
+      >p{
+        color:white;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 40px;
+      }
+      >img{
+        width: 50%;
+      }
+      .loading{
+        display: flex;
+        justify-content: center;
+      }  
+    }
+  
+    .loadlast {
+      >div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 100px;
+        >div > a{
+          margin-top: 100px;
+        }
+        >div > img {
+          width: 60%;
+        }
+        >a{ 
+          text-align: center;
+          >img{
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      
+    } 
+    }
+  
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .loadfirst{
+    .loading img{width: 10px;}
+    > p {
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+  }
+
+  .loadlast{
+    >div >img{
+      width:70%;
+    }
+    > div > a >img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
