@@ -6,7 +6,7 @@ export default function LoginCheck() {
   let navi = useRouter();
   function checkst(){
     if (typeof window !== 'undefined') {
-      let item = !localStorage.loginstate ? 0 : localStorage.loginstate;
+      let item = !sessionStorage.loginstate ? 0 : sessionStorage.loginstate;
       return item;
     }
   }

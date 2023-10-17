@@ -16,7 +16,7 @@ export default function page() {
       sessionStorage.setItem('u_id',u_id)
       navi.push( './member/join')
     } else {
-      localStorage.setItem('loginstate',u_id)
+      sessionStorage.setItem('loginstate',u_id)
       navi.push('./main')
     } 
   };

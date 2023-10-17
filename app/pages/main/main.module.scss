@@ -125,6 +125,11 @@
               justify-content: center;
               align-items: center;
               height: 192px;
+              img{
+                width: 65%;
+                height: 65%;
+                object-fit: cover;
+              }
             }
             .random_digimon_box_wrap{
               position: relative;
@@ -157,25 +162,32 @@
       }
       .today_text_wrap{
         position: relative;
-        bottom: 40px;
         background: url("/img/main/today_text_wrap.png");
         background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 590px;
-        height: 324px;
-        .today_ab{
-          display: flex;
-          justify-content: space-evenly;
-          position: absolute;
-          top: calc(50% - 107px);
-          width: 100%;
+        background-size: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding:50px 0 60px;
           .today_ab_left{
-            position: relative;
-            display: inline-block;
             display: flex;
-            align-items: center;
             figure{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 120px; height: 120px;
+              position: relative;
               font-size: 0;
+              figcaption{
+                position: absolute;
+                top:0; left:0;
+                width: 120px; height: 120px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
             }
             .today_ab_left_wrap{
               position: absolute;
@@ -189,6 +201,9 @@
               margin-bottom: 20px;
               .today_ab_boxs{
                 font-size: 0;
+              }
+              .today_ab_boxs2{
+                display: none;
               }
               p{
                 position: absolute;
@@ -231,8 +246,11 @@
                 }
               }
             }
+            .p2{
+              display: none;
+            }
           }
-        }
+        
       }
     }
     .today_dm_wrap{
@@ -252,20 +270,18 @@
           padding-left: 25px;
           display: flex;
           .swipers_2{
-            position: relative;
-            display: flex;
-            background: url("/img/main/dms_wrap.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            width: 236px;
-            height: 280px; 
+            .today_dms_wrap{
+              position: relative;
+              display: flex;
+              background: url("/img/main/dms_wrap.png");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              width: 236px;
+              height: 280px;
+              justify-content: center;
+            }
             .today_dms{
               font-size: 0;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -460,15 +476,15 @@
             bottom: 0;
             left: 0;
             right: 0;
-            width: 85%;
+            width: 90%;
             margin: 0 auto;
             .today_ab_left{
-              position: relative;
-              display: inline-block;
-              display: flex;
-              align-items: center;
+              width: 50%;
+              justify-content: center;
               figure{
-                font-size: 0;
+                img{
+                  width: 100%;
+                }
               }
               .today_ab_left_wrap{
                 position: absolute;
@@ -477,11 +493,14 @@
               }
             }
             .todya_ab_right{
+              width: 50%;
               .todya_ab_right1{
                 position: relative;
                 margin-bottom: 20px;
                 .today_ab_boxs{
-                  font-size: 0;
+                  img{
+                    width: 100%;
+                  }
                 }
                 p{
                   position: absolute;
@@ -494,33 +513,25 @@
               }
               .todya_ab_right2{
                 margin-bottom: 20px;
-                position: relative;
-                &:last-child{
-                  margin-bottom: 0;
-                }
                 .todya_ab_right2_box{
-                  font-size: 0;
+                  img{
+                    width: 100%;
+                  }
                 }
                 .todya_ab_right2_txt{
-                  display: flex;
-                  align-items: center;
-                  position: absolute;
                   top: calc(50% - 12px);
                   left: calc(50% - 168px);
                   span{
                     &:nth-of-type(1){
-                      font-size: 18px;
-                      margin-right: 30px;
+                      font-size: 12px;
+                      margin-right: 0px;
                     }
                     &:nth-of-type(2){
-                      font-size: 14px;
+                      display: none;
                     }
                   }
                   figure{
-                    font-size: 0;
-                    img{
-                      width:14px;
-                    }
+                    display: none;
                   }
                 }
               }
@@ -553,30 +564,37 @@
           padding-left: 15px; 
           .myswiper2{
             display: flex;
+            padding-left: 0;
             .swipers_2{
               background-size: contain;
-              .today_dms{
-                font-size: 0;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                img{
-                  width: 80%;
+              .today_dms_wrap{
+                background-size: contain;
+                width: 100%;
+                .today_dms{
+                  font-size: 0;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  height: 280px;
+                  width: 236px;
+                  img{
+                    width: 80%;
+                  }
                 }
               }
               .today_dm_info_wrap{
                 position: absolute;
                 bottom: 0px;
                 left: -4px;
-                background: url("/img/main/dm_box.png");
+                background: url(/img/main/dm_box.png);
                 background-repeat: no-repeat;
-                background-size: contain;
-                width: 100%;
+                background-size: 100% 100%;
+                width: 237px;
                 height: 86px;
                 .today_dm_info{
                   position: absolute;
@@ -621,6 +639,85 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width:610px) {
+  .main_wrap .bg .today_wrap .today_text_wrap{
+    background-size: 100% 100%;
+    object-fit: contain;
+    padding: 90px 0 60px;
+  }
+  .main_wrap .bg .today_wrap .today_text_wrap .today_ab_left {
+    display: none;
+  }
+  .main_wrap .bg .today_wrap .today_text_wrap .todya_ab_right{
+    width: 100%;
+    .todya_ab_right1{
+      .today_ab_boxs{
+        display: none;
+      }
+      .today_ab_boxs2{
+        display: block;
+        text-align: center;
+      }
+      p{
+        font-size: 16px;
+        top:0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .today_ab_boxs{
+        text-align: center;
+        img{
+          width: 70%;
+        }
+      }
+    }
+    .todya_ab_right2{
+      // margin-bottom: 0;
+      &:nth-of-type(3){
+        display: none;
+      }
+      .todya_ab_right2_box{
+        text-align: center;
+        img{
+          width: 70%;
+        }
+      }
+      .todya_ab_right2_txt{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        justify-content: center;
+        figure{
+          display: none;
+        }
+        span{
+          &:nth-of-type(1){
+            font-size: 14px;
+            margin-right: 0;
+          }
+          &:nth-of-type(2){
+            display: none;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .p2{
+      display: block;
+      color:#00f3ff;
+      text-align: center;
     }
   }
 }

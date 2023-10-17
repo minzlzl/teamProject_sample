@@ -16,13 +16,7 @@ export default function Join2({setList,setNickName,setUimg}) {
   let [ii,setIi] = useState();
   let elImg = useRef();
   
-  let winHeight = useRef();
-  useEffect(()=>{
-    input.current.focus();
-      let h = window.innerHeight + 110;
-      winHeight.current.style.setProperty('height', `${h}px`);
-
-  },[])
+ 
 
   const [name, setName] = useState(''); 
   const maxCharacters = 6;
@@ -42,8 +36,14 @@ export default function Join2({setList,setNickName,setUimg}) {
   }
   const con2Click = ()=>{
     let nickNames = input.current.value;
+    let nicklen = nickNames.split("");
     if(nickNames === ``){
       alert("닉네임을 입력해주세요.");
+      input.current.focus();
+      return false;
+    }
+    if(nicklen.length < 2){
+      alert("2글자 이상 입력해주세요.");
       input.current.focus();
       return false;
     }
@@ -55,6 +55,9 @@ export default function Join2({setList,setNickName,setUimg}) {
       setUimg(ii)
       setNickName(nickNames);
   };
+
+  let winHeight = useRef();
+  let btnh = useRef();
 
   
   return (
@@ -93,7 +96,7 @@ export default function Join2({setList,setNickName,setUimg}) {
             <figure className={join.user_name_txt}><img src='/img/member/join/user_name.png' alt='유저 닉네임 작성하는 창'/></figure>
             <input type="text" placeholder='닉네임을 입력하세요.' ref={input} value={name} onChange={inputChange} className={join.user_input}/>
           </div>
-          <div className={join.create} onClick={con2Click}>
+          <div className={join.create} onClick={con2Click} ref={btnh}>
             <figure className={join.create_img}><img src='/img/member/join/create.png' alt='생성하기'/></figure>
             <p>생성하기</p>
           </div>

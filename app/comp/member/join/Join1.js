@@ -9,9 +9,6 @@ export default function Join1({list,setList}) {
     setList(2)
   };
 
-  useEffect(()=>{
-    winHeight.current.style.setProperty('height', `${window.innerHeight}px`);
-  },[])
 
   return (
     <div className={join.join_wrap} ref={winHeight} >

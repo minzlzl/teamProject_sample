@@ -22,6 +22,8 @@
     width: 100%;
     
     background-image: url('../../../../public/img/board/write/bg_board.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: rgb(0, 0, 0,40);
     header{
         padding: 5%;
@@ -114,7 +116,7 @@
         .selectTab{
             position: relative;
             width: 40%; height: 100%;
-            .selectDeco{width: 100%;}
+            .selectDeco{width: 100%; cursor: pointer;}
             h2{
                 position: absolute; top:35%; right: 20%;
 
@@ -136,6 +138,7 @@
     .drawing{
         padding: 0 5%;
         width: 100%;
+        position: relative;
         .canvasWrapper{
             width: 100%;
             position: relative;
@@ -150,7 +153,29 @@
                 transform: translate(0%,13%);
                 z-index: 4;
             }
-        
+        }
+        .selectedWrap{
+            position: absolute; top: 10%; left: 50%;
+            transform: translate(-50%, 0);
+            .SDigimonName{
+                position: relative;
+                @include flex( );
+                .SNamePlate{
+                    width: 100%; height: 100%;
+                }
+                .SNameSlot{
+                    position: absolute; top: 35%; left: 50%;
+                    transform: translate(-50%, 0%);
+                    width: 250px;
+
+                    color: #F00;
+                    text-shadow: 2px 1px 0px #005188;
+                    font-family: NeoDunggeunmo;
+                    font-size: 24px;
+                    font-weight: 400;
+                    letter-spacing: 2.4px;
+                }
+            }
         }
     }
 
@@ -238,54 +263,118 @@
         }
     }
 
-    footer{
-        padding-top:5%;
-        margin-top: 70px;
-        .footInner{
-            padding: 5%;
-            width: 100%;
-            border-top: 2px solid #00F3FF;
-            background: #000D1B;
-            @include flex(space-between,flex-end);
-            img{
-                width: 50px;
-            }
-        }
-    }
-
     .selectDigimon{
-        opacity: 0;
-
         z-index: 5;
-        width: 100%; height: 100vh;
-        width: 640px;
+        width: 640px; height: 100vh;
+        margin: 0 auto;
         background-color: rgb(0, 0, 0,0.5);
         backdrop-filter: blur(3px);
-        position: absolute; top: 0; left: 0;
+        position: fixed; bottom: 0; left: 50%;
+        transform: translate(-50%, 0%);
         @include flex(space-between,flex-end);
         .selBg{
             z-index: 6;
             width: 100%; height: 73vh;
             background-image: url('../../../../public/img/board/write/selectBg.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center; 
+
+            @include flex(space-evenly,){flex-direction: column};
             .searchBg{
                 width: 603px; height: 111px;
                 margin: 5% auto 0 auto;
                 background-image: url('../../../../public/img/board/write/searchBg.png');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
                 @include flex( );
                 .wrapSearch{
                     width: 90%;
                     margin: 0 auto;
                     padding: 5% auto;
                     @include flex( );
-                    .searchInput{}
-                    .searchBtn{}
+                    .searchInput{
+                        width: 300px;
+                        padding: 0 20px;
+                        background-color: transparent;
+                        border: none; 
+                        outline: none;
+
+                        color: #FFF;
+                        font-family: Noto Sans KR;
+                        font-size: 22px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        &::placeholder{
+                            color: #B5B5B5;
+                        }
+                    }
+                    .searchBtn{cursor: pointer;}
                 }
             }
-            .digimonList{}
+            .digimonList{
+                width: 100%; height: 50vh;
+                
+                @include flex(center,center){flex-wrap: wrap};
+                padding: 5%;
+                .eachDigimon{
+                    width: 30%;
+                    @include flex(center,center){flex-direction: column};
+                    cursor: pointer;
+                    .cageWhole{
+                        position: relative;
+                        .cage{width: 155px;}
+                        .mon{
+                            position: absolute; top: 20%; left :0; right:0; margin:0 auto;
+                            width: 108px; height: 120px;
+                            border: 2px solid #00F3FF;
+                            display: flex;
+                            justify-content: center; align-items: center;
+                        }
+                    }
+                    .nameWhole{
+                        transform: translate(0,-20%);
+                        position: relative;
+                        .namePlate{width: 155px;}
+                        .name{
+                            width: 80%; font-size: 16px;
+                            position: absolute; bottom: 0%; left: 50%;
+                            transform: translate(-50%, -120%);
+                        }
+                    }
+                }
+                overflow-y: scroll;
+            }
         }
+        display: flex;
     }
-            
+       //스크롤 커스텀
+    ::-webkit-scrollbar {
+        width: 10px;
+        background-color: transparent; 
+        border: 1px solid #00F3FF;
+    }
+    ::-webkit-scrollbar-thumb {
+        width: 4px;
+        height: 62px;
+        background-color: #00F3FF;
+        background-clip: padding-box;
+        border: 3px solid transparent;
+    }
 
+    .nextPage{
+        z-index: 5;
+        width: 640px; height: 100vh;
+        margin: 0 auto;
+        background-color: rgb(0, 0, 0,0.5);
+        backdrop-filter: blur(3px);
+        position: fixed; bottom: 0; left: 50%;
+        transform: translate(-50%, 0%);
+        @include flex(center,center){flex-direction: column};
+        .wordBubble{ width: 60%; transform: translate(0%,100%); }
+        .threeDigimon{width: 50%;}
+    }
 }
 
 //~~~~~~~~~~~~~~~~~~~반응형~~~~~~~~~~~~
@@ -295,7 +384,7 @@
         margin: 0 auto;
     }
 }
-@media (min-width:401px) and (max-width:640px){
+@media (min-width:401px) and (max-width:600px){
     .board_write{
         .profile{
             width: 80%;
@@ -331,6 +420,14 @@
                     width: 100%;
                 }
                 canvas{
+                }
+            }
+            .selectedWrap{
+                .SDigimonName{
+                    .SNameSlot{
+                        transform: translate(-50%, -10%);
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -371,10 +468,43 @@
                     transform: translate(-50%,110%);
                     font-size: 25px !important;
                 }
+                .disabled-button img {filter: grayscale(100%); }
             }
         }
-        footer{
-            margin-top: 0px;
+        .selectDigimon{
+            width: 100%;
+            .selBg{
+                .searchBg{
+                    width: 84%;
+                    height: unset;
+                    .wrapSearch{
+                        width: 90%;
+                        margin: 0 auto;
+                        padding: 5% auto;
+                        .searchInput{width:200px; font-size: 16px;}
+                        .searchBtn{
+                            img{width: 80%;
+                                transform: translate(13%, 8%);}
+                        }
+                    }
+                }
+                .digimonList{
+                    .eachDigimon{
+                        .cageWhole{
+                            .cage{width: 100%;}
+                            .mon{
+                                width: 70%; height: 60%;
+                            }
+                        }
+                        .nameWhole{
+                            .namePlate{width: 100%;}
+                            .name{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -416,6 +546,14 @@
                 canvas{
                 }
             }
+            .selectedWrap{
+                .SDigimonName{
+                    .SNameSlot{
+                        transform: translate(-50%, -10%);
+                        font-size: 18px;
+                    }
+                }
+            }
         }
         .drawTool{
             margin-top: 35%;
@@ -456,8 +594,44 @@
                 }
             }
         }
-        footer{
-            margin-top: 0px;
+        .selectDigimon{
+            width: 100%;
+            .selBg{
+                .searchBg{
+                    width: 84%;
+                    height: unset;
+                    .wrapSearch{
+                        width: 90%;
+                        margin: 0 auto;
+                        margin: 5px auto 0 auto;
+                        .searchInput{width:200px; font-size: 16px;}
+                        .searchBtn{
+                            img{width: 80%;
+                                transform: translate(16%, 3%);}
+                        }
+                    }
+                }
+                .digimonList{
+                    .eachDigimon{
+                        .cageWhole{
+                            .cage{width: 100%;}
+                            .mon{
+                                width: 70%; height: 60%;
+                            }
+                        }
+                        .nameWhole{
+                            .namePlate{width: 100%;}
+                            .name{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nextPage{
+            .wordBubble{ width: 50%;}
+            .threeDigimon{ width: 45%;}
         }
     }
 }
