@@ -377,21 +377,20 @@
         .logo_nick_wrap{
           width:300px;
           .nick_txt{
-            width: 85%;
+            width: 90%;
             .nick_wrap{
-              display: flex;
-              align-items: flex-end;
               span{
                 font-size: 16px;
                 margin-top: 10px;
+                margin-right: 0;
               }
             }
             span{
               font-size: 14px;
               margin-top: 10px;
+              margin-right: 0;
             }
             figure{
-              margin-top:0px;
               width: 20%;
               img{
                 width: 100%;
@@ -748,9 +747,17 @@
 @media (max-width:575px) {
   .main_wrap .bg .search_input .input {
     padding:0 40px;
-    form{
-      input{
-        font-size: 12px;
+    .input_form{
+      .inputs{
+        font-size: 14px;
+      }
+      figure{
+        margin-left: 0;
+        .fig_input{
+          background-size: 75%;
+          background-position: center right;
+          background-repeat: no-repeat;
+        }
       }
     }
   }

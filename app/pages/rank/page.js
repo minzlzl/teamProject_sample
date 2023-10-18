@@ -32,7 +32,7 @@ export default function page() {
           <figure className={rank.logo}><img src='/img/main/logo.png' alt='로고 이미지'/></figure>
           <div className={rank.logo_nick_wrap} onClick={()=>{ moving('/pages/member/mypage') }} >
             <div className={rank.nick_txt}>
-              <span>RK.{rk}</span>
+              <span>[RK.{rk}]</span>
               <div className={rank.nick_wrap}>
                 <figure><img src={`/img/main/icon/${member.mb_icon}.png`} alt=''/></figure>
                 <span>{member.mb_nick}</span>

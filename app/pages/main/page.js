@@ -51,11 +51,9 @@ async function randigimon(){
   }
   const ser = (e)=>{
     e.preventDefault();
-    console.log('a');
-  }
-
-  const detail = ()=>{
-    mypage.push(`../dex/detail?id=${rdg.id}`);
+    const search = e.target.search.value;
+    if(search == '') { alert("검색할 디지몬을 입력해주세요."); return false; }
+    nav.push(`/pages/dex/list?mode=search&search=${search}`);
   }
 
   if(!member) return <></>
@@ -79,9 +77,9 @@ async function randigimon(){
         </div>
         <div className={main.search_input}>
           <div className={main.input}>
-            <form onSubmit={ser}>
-              <input type="text" placeholder='디지몬을 검색해보세요.' ref={input}/>
-              <figure><input type="submit" value="" /></figure>
+            <form className={main.input_form} onSubmit={ser}>
+              <input type="text" name='search' className={main.inputs} placeholder='디지몬을 검색해보세요.' ref={input}/>
+              <figure><input type="submit" className={main.fig_input} value="" /></figure>
             </form>
           </div>
         </div>

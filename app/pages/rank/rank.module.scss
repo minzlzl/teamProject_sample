@@ -256,16 +256,18 @@
         .logo_nick_wrap{
           width: 300px;
           .nick_txt{
-            width: 85%;
+            width: 90%;
             .nick_wrap{
               span{
                 font-size: 16px;
                 margin-right: 10px;
+                margin-right: 0;
               }
             }
             span{
               font-size: 14px;
               margin-top: 10px;
+              margin-right: 0;
             }
             figure{
               width: 20%;
