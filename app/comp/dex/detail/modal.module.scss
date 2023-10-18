@@ -1,0 +1,149 @@
+.modal_page {
+    z-index: 10;
+    width: 640px;
+    height: 100vh;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .modal_p {
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: relative;
+        .modal {
+            background-image: url("/img/detail/modal.png");
+            background-repeat: no-repeat;
+            background-size: 600px 500px;
+            text-shadow: 2px 1px 0 #1f93ff;
+            margin: 0 20px;
+            position: absolute;
+            top: 20%;
+            width: 600px;
+            height: 750px;
+            div {
+                h3 {
+                    padding: 40px 0;
+                    font-size: 22px;
+                    text-align: center;
+                }
+                div {
+                    width: 500px;
+                    height: 310px;
+                    margin: 0 auto;
+                    p {
+                        padding-right: 20px;
+                        width: 500px;
+                        height: 310px;
+                        line-height: 30px;
+                        overflow: scroll;
+                        overflow-x: hidden;
+                    }
+                }
+                p::-webkit-scrollbar {
+                    width: 10px;
+                    background-color: transparent;
+                    border: 1px solid #00f3ff;
+                }
+                p::-webkit-scrollbar-thumb {
+                    background-color: #00f3ff;
+                    background-clip: padding-box;
+                    border: 3px solid transparent;
+                }
+            }
+            span {
+                position: absolute;
+                bottom: 36%;
+                width: 200px;
+                margin: 0 200px;
+                padding: 16px 0;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.modal_page_skill {
+    z-index: 10;
+    width: 640px;
+    height: 100vh;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .modal_p {
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: relative;
+        .modal {
+            background-image: url("/img/detail/modal_skill.png");
+            background-repeat: no-repeat;
+            background-size: 600px 740px;
+            text-shadow: 2px 1px 0 #1f93ff;
+            margin: 0 20px;
+            position: absolute;
+            top: 4%;
+            width: 600px;
+            height: 750px;
+            .more {
+                h3 {
+                    padding: 40px 0;
+                    font-size: 22px;
+                    text-align: center;
+                }
+                .skill_list {
+                    width: 440px;
+                    height: 500px;
+                    margin: 20px auto;
+                    overflow: scroll;
+                    overflow-x: hidden;
+                    li {
+                        > p {
+                            display: flex;
+                            align-items: center;
+                            gap: 16px;
+                            font-size: 22px;
+                            padding: 10px 0;
+                            cursor: pointer;
+                            &::before {
+                                content: "●";
+                                font-size: 8px;
+                                text-shadow: 2px 1px 0 #1f93ff;
+                            }
+                        }
+                        .skill_description {
+                            display: none;
+                            width: 400px;
+                            height: auto;
+                            padding: 20px 0 20px 50px;
+                            font-size: 18px;
+                            > span {
+                            }
+                        }
+                    }
+                }
+                ul::-webkit-scrollbar {
+                    width: 10px;
+                    background-color: transparent;
+                    border: 1px solid #00f3ff;
+                }
+                ul::-webkit-scrollbar-thumb {
+                    background-color: #00f3ff;
+                    background-clip: padding-box;
+                    border: 3px solid transparent;
+                }
+            }
+            > p {
+                position: absolute;
+                bottom: 26px;
+                width: 200px;
+                margin: 0 200px;
+                padding: 16px 0;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+}

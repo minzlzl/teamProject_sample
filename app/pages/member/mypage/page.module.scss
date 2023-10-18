@@ -1,0 +1,251 @@
+.bg_img {
+  background-image: url('/img/main/bg.png');
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  .pro {
+
+    .pro_title {
+      position: relative;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      :nth-child(1) {
+        position: absolute;
+      }
+    }
+  }
+
+  .pro_view_bg {
+    margin-top: 20px;
+    height: 100%;
+
+    .pro_view {
+      background-image: url('/img/member/mypage/Group 194.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 95%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      .pro_img {
+        width: 180px;
+      }
+    }
+
+    .pro_img {
+      margin-top: 35px;
+      margin-right: 10px;
+    }
+
+    p {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .pro_view_img {
+      width: 90%;
+      margin-right: 20px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .pro_view_form {
+      max-width: 640px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      left: 0;
+      right: 0;
+      top: 470px;
+      margin: 0 auto;
+
+      .text_box {
+        border: none;
+        outline: none;
+        background: transparent;
+        color: white;
+        width: 140px;
+        margin-left: 20px;
+        height: 30px;
+        font-size: 25px;
+        font-family: 'neodgm_code';
+      }
+
+      .submit_btn {
+        background-color: transparent;
+        border: 0px transparent solid;
+        width: 40px;
+        height: 40px;
+      }
+
+      img {
+        width: 30px;
+        margin: 0;
+      }
+    }
+
+    .modal_bg {
+
+      position: fixed;
+      max-width: 640px;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 7;
+
+      .modal_p {
+        background-image: url('/img/member/mypage/Group 233.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 80px 60px 60px 60px;
+/*         margin-top: 200px; */
+
+        > figure {
+          img {
+            width: 100px;
+            height: 100px;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.capsule {
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 50px;
+
+  figure {
+    width: calc(100% / 3);
+    text-align: center;
+
+    img {
+      width: 110px;
+      object-fit: cover;
+      margin: 20px 0;
+      opacity: 0.6;
+    }
+  }
+}
+
+.last_btn {
+  margin: 20px 20px 150px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .btn_ani {
+    display: flex;
+    flex-direction: column;
+
+    :nth-child(1) {
+      animation-name: up;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+      @keyframes up {
+        0% {
+          transform: translateY(0px);
+        }
+
+        100% {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .bg_img{
+    .pro{
+      .pro_title{
+        :nth-child(2){width: 230px;}
+      }
+      .pro_view_bg {
+          .pro_view{
+            .pro_img{
+                width: 150px;
+            }
+            .pro_view_form {
+              top: 430px;
+              .text_box {
+                width: 170px;
+                font-size: 20px;
+              }
+              img {
+                width: 25px;
+              }
+            }
+            .modal_bg {
+              .modal_p {
+                gap: 10px;
+                padding: 48px;
+/*                 margin-top: 150px; */
+                > figure {
+                  img {
+                    width: 70px;
+                    height: 70px;
+                  }
+                }
+              }
+            }
+        }
+      }
+    }
+
+    .capsule {
+      figure {
+        img {
+          width: 100px;
+        }
+      }
+    }
+    
+    .last_btn {
+      margin: 20px 20px 150px;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 200px;
+        object-fit: cover;
+      }
+      .btn_ani {
+        img{
+          display: none;
+          }
+        }
+      }
+  }
+}
+
