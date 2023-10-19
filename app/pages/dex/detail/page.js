@@ -12,6 +12,7 @@ import { Pagination } from 'swiper/modules';
 import Link from 'next/link'
 import { user_get } from '../../../comp/member/Login'
 import { useRouter } from 'next/navigation'
+import Lodding from '@/app/comp/Lodding'
 
 export default function page() {
     // 모달 버튼 클릭 유무를 저장할 state
@@ -27,28 +28,29 @@ export default function page() {
     const [rk, setRk] = useState();
     const [likecnt, setLikecnt] = useState();
     const [dg, setDg] = useState();
+    const [btnname, setBtnname] = useState('포획하기');
 
     const nav = useRouter();
     async function fetchData() {
         const mb = await user_get()
         setRk(mb.rk.data)
         setMember(mb.data);
-        dglike();
-        dgch();
-        line();
     }
-    async function line(){
+    async function line() {
         const line = await axios.get(`/api/line?dg_id=${idParam}`);
         setReviewText(line.data)
     }
-    async function dglike(){
+    async function dglike() {
         const lik = await axios.get(`/api/dex/detail/like?num=${idParam}`)
         setLikecnt(lik.data)
     }
 
     useEffect(() => {
         fetchData()
-    }, []);
+        dglike();
+        dgch();
+        line();
+    }, [idParam]);
 
     // 버튼 클릭시 모달 버튼 클릭 유무를 설정하는 state 함수
     const clickModal = (des) => {
@@ -78,6 +80,10 @@ export default function page() {
     const data_input = async (e) => {
         e.preventDefault();
         const title = e.target.title.value;
+        if(title == '') {
+            alert("한줄평을 작성하세요");
+            return false;
+        }
         const date = new Date();
         let y = date.getFullYear();
         let m = date.getMonth() + 1;
@@ -88,17 +94,21 @@ export default function page() {
         line()
         //setReviewText([...reviewText, value.search]);
     }
-    const like =async () => {
-        const dd = {idParam,id:member.mb_id}
-        await axios.post(`/api/dex/detail/like`,dd)
+    
+    const like = async () => {
+        const dd = { idParam, id: member.mb_id }
+        await axios.post(`/api/dex/detail/like`, dd)
         dglike()
     }
 
 
-    async function dgch(){
+    async function dgch() {
         const mb_id = sessionStorage.getItem('loginstate');
         const ch = await axios.get(`/api/dex/detail/catch?dg_id=${idParam}&mb_id=${mb_id}`)
         setDg(ch.data);
+        if(ch.data == true) {
+            setBtnname('포획완료')
+        }
     }
 
     const detailData = function () {
@@ -109,9 +119,9 @@ export default function page() {
     }
 
     useEffect(() => {
-        if(!idParam) {
+        if (!idParam) {
             history.back();
-        }else {
+        } else {
             detailData()
         }
     }, [idParam])
@@ -125,13 +135,14 @@ export default function page() {
     }
 
     const performAction = async () => {
-        if(dg === false) {
+        if (dg === false) {
             let isSuccess = Math.floor(Math.random() * 100)
-            if(isSuccess <= 20) {
-                const send = {idParam,id:member.mb_id}
-                await axios.post(`/api/dex/detail/catch`,send)
+            if (isSuccess <= 20) {
+                const send = { idParam, id: member.mb_id }
+                await axios.post(`/api/dex/detail/catch`, send)
                 setDg(true)
                 alert('나이스! 포획성공!');
+                dgch()
             } else {
                 alert('디지몬이 도망갔습니다.');
             }
@@ -140,8 +151,7 @@ export default function page() {
         }
     };
 
-    if (!data || !member) return <></>;
-
+    if (!data || !member) return <Lodding />
     return (
         <section className={de.detail} key={data.id}>
             {showModal && <Modal clickModal={clickModal} DescriptionInModal={DescriptionInModal} />}
@@ -149,8 +159,8 @@ export default function page() {
             <div className={de.detail_page}>
                 <div className={de.user_info}>
                     <p><img src={'/img/detail/logo.png'} /></p>
-                    <div className={de.info_box}>
-                        <div className={de.inner_box}>
+                    <div className={de.info_box} onClick={()=>{ moving('/pages/member/mypage') }}>
+                        <div className={de.inner_box} >
                             <span>[Rk.{rk}]</span>
                             <div>
                                 <img src={`/img/main/icon/${member.mb_icon}.png`} alt='' />
@@ -158,72 +168,85 @@ export default function page() {
                             </div>
                         </div>
                         <div className={de.user_profile}>
-                            <p onClick={() => { moving('/pages/member/mypage') }}><img src={`/img/main/face/${member.mb_img}.png`} alt='' /></p>
+                            <p ><img src={`/img/main/face/${member.mb_img}.png`} alt='' /></p>
                         </div>
                     </div>
                 </div>
                 <div className={de.dg_info}>
                     <h3>{data.name}</h3>
-                    <div className={de.dg_data}>
-                        <div className={de.left_data}>
-                            <p className={de.like} onClick={like} >
-                                <img src={'/img/detail/like_box.png'} />
-                                <img src={'/img/detail/like_1.png'} className={de.likes} />
-                                <span>{likecnt}</span>
-                            </p>
-                            <div className={de.dg_img}>
-                                <p className={de.dg_img_1}>
-                                    <img src={'/img/detail/dg_img_1.png'} />
+                    <div className={de.dg_box}>
+                        <div className={de.dg_data}>
+                            <div className={de.left_data}>
+                                <p className={de.like} onClick={like} >
+                                    <img src={'/img/detail/like_box.png'} />
+                                    <img src={'/img/detail/like_1.png'} className={de.likes} />
+                                    <span>{likecnt}</span>
                                 </p>
-                                <p className={de.sample}>
-                                    <img src={data.images[0].href} />
-                                </p>
-                                <p className={de.dg_img_2}>
-                                    <img src={'/img/detail/dg_img_2.png'} />
-                                </p>
+                                <div className={de.dg_img}>
+                                    <p className={de.dg_img_1}>
+                                        <img src={'/img/detail/dg_img_1.png'} />
+                                    </p>
+                                    <p className={de.sample}>
+                                        <img src={data.images[0].href} onError={handleImgError} alt='' />
+                                    </p>
+                                    <p className={de.dg_img_2}>
+                                        <img src={'/img/detail/dg_img_2.png'} />
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <ul className={de.right_data}>
-                            <li>
-                                <p>LEVEL</p>
-                                <div>
-                                    {
-                                        data.levels.map((level, key_1) => (
-                                            <span key={key_1}>{level.level}</span>
-                                        ))
-                                    }
-                                </div>
-                            </li>
-                            <li>
-                                <p>TYPE</p>
-                                <div>
-                                    {
-                                        data.types.length === 0
-                                            ? <span>none</span>
-                                            : data.types.map((type, key_2) => (
-                                                <span key={key_2}>{type.type}</span>
+                            <ul className={de.right_data}>
+                                <li>
+                                    <p>LEVEL</p>
+                                    <div>
+                                        {
+                                            data.levels.map((level, key_1) => (
+                                                <span key={key_1}>{
+                                                    level.level == 'Baby I' ? '유아기' 
+                                                    : level.level =='Baby II' ? '유년기'
+                                                    : level.level =='Child' ? '성장기'
+                                                    : level.level =='Adult' ? '성숙기'
+                                                    : level.level =='Perfect' ? '완전체'
+                                                    : level.level =='Ultimate' ? '궁극체'
+                                                    : level.level =='Super Ultimate' ? '초 궁극체'
+                                                    : level.level == 'Armor' ? '아머체'
+                                                    : level.level == 'Hybrid' ? '하이브리드'
+                                                    : level.level
+                                                    }</span>
                                             ))
-                                    }
-                                </div>
-                            </li>
-                            <li>
-                                <p>X-Antibody</p>
-                                <div>
-                                    <span>{data.xAntibody === true ? 'true' : data.xAntibody ? data.xAntibody : 'none'}</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={de.description} onClick={() => clickModal(data)}>
-                        <p className={de.description_txt}>
-                            {data.descriptions.find(description => description.language === 'en_us')?.description || 'The data is not available.'}
-                        </p>
-                        <div className={de.description_more}>
-                            <p><img src={'/img/detail/more.png'} /></p>
+                                        }
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>TYPE</p>
+                                    <div>
+                                        {
+                                            data.types.length === 0
+                                                ? <span>none</span>
+                                                : data.types.map((type, key_2) => (
+                                                    <span key={key_2}>{type.type}</span>
+                                                ))
+                                        }
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>X-Antibody</p>
+                                    <div>
+                                        <span>{data.xAntibody === true ? 'true' : data.xAntibody ? data.xAntibody : 'none'}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={de.description} onClick={() => clickModal(data)}>
+                            <p className={de.description_txt}>
+                                {data.descriptions.find(description => description.language === 'en_us')?.description || 'The data is not available.'}
+                            </p>
+                            <div className={de.description_more}>
+                                <p><img src={'/img/detail/more.png'} /></p>
+                            </div>
                         </div>
                     </div>
                     <div className={de.get_btn}>
-                        <p onClick={() => performAction(data)}>포획하기</p>
+                        <p onClick={() => performAction(data)}>{btnname}</p>
                     </div>
                 </div>
                 <div className={de.skill_more}>
@@ -246,26 +269,27 @@ export default function page() {
                         </div>
                     </div>
                 </div>
+                <div className={de.skill_info_mobile}></div>
                 <div className={de.dg_review}>
                     <h3>유저 한줄 평</h3>
                     <ul>
                         {
-                        reviewText.length <= 0 ? <li><p> 작성 된 한줄평이 없습니다. </p></li>
-                        :
-                        reviewText.map((item, key) => (
-                            <li className={de.review_list} key={item.num}>
-                                <div>
-                                    <p className={de.review_text}>{item.content}</p>
-                                    <div>
-                                        <div className={de.user_text}>
-                                            <img src={`/img/main/icon/${item.wr_icon}.png`} />
-                                            <p>{item.wr_nick}</p>
+                            reviewText.length <= 0 ? <li className={de.no_review_list}><p> 작성 된 한줄평이 없습니다. </p></li>
+                                :
+                                reviewText.map((item, key) => (
+                                    <li className={de.review_list} key={item.num}>
+                                        <div>
+                                            <p className={de.review_text}>{item.content}</p>
+                                            <div>
+                                                <div className={de.user_text}>
+                                                    <img src={`/img/main/icon/${item.wr_icon}.png`} />
+                                                    <p>{item.wr_nick}</p>
+                                                </div>
+                                                <span>[2023.10.12]</span>
+                                            </div>
                                         </div>
-                                        <span>[2023.10.12]</span>
-                                    </div>
-                                </div>
-                            </li>
-                        ))
+                                    </li>
+                                ))
                         }
                     </ul>
                 </div>
@@ -318,7 +342,7 @@ export default function page() {
                                                 <Link href={{
                                                     pathname: '../dex/detail',
                                                     query: {
-                                                        id: priorEvolutions.id,
+                                                        id: !priorEvolutions.id ? idParam :  priorEvolutions.id,
                                                     }
                                                 }} className={de.Evolution_list} >
                                                     {priorEvolutions.id == priorEvolutions.id ? (
@@ -374,35 +398,35 @@ export default function page() {
                             }}>
                             {
                                 data.nextEvolutions.length === 0
-                                ? <div className={de.no_data}>No data</div>
-                                : data.nextEvolutions.map((nextEvolutions, key_6) => (
-                                    <SwiperSlide key={key_6}>
-                                        <div className={de.list_box}>
-                                            <Link href={{
-                                                pathname: '../dex/detail',
-                                                query: {
-                                                    id: nextEvolutions.id,
-                                                }
-                                            }} className={de.Evolution_list}>
-                                                <div className={de.Evolution_data}>
-                                                    <div className={de.picture}>
-                                                        <img src={'/img/detail/digi_box.png'} />
-                                                        <div className={de.digimon}>
-                                                            <img src={nextEvolutions.image} onError={handleImgError} className={de.digi_picture} />
-                                                            <p>
-                                                                <img src={'/img/detail/mask.png'} className={de.mask} />
-                                                            </p>
+                                    ? <div className={de.no_data}>No data</div>
+                                    : data.nextEvolutions.map((nextEvolutions, key_6) => (
+                                        <SwiperSlide key={key_6}>
+                                            <div className={de.list_box}>
+                                                <Link href={{
+                                                    pathname: '../dex/detail',
+                                                    query: {
+                                                        id: nextEvolutions.id,
+                                                    }
+                                                }} className={de.Evolution_list}>
+                                                    <div className={de.Evolution_data}>
+                                                        <div className={de.picture}>
+                                                            <img src={'/img/detail/digi_box.png'} />
+                                                            <div className={de.digimon}>
+                                                                <img src={nextEvolutions.image} onError={handleImgError} className={de.digi_picture} />
+                                                                <p>
+                                                                    <img src={'/img/detail/mask.png'} className={de.mask} />
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div className={de.digi_name}>
+                                                            <img src={'/img/detail/name_box.png'} />
+                                                            <span>{nextEvolutions.digimon}</span>
                                                         </div>
                                                     </div>
-                                                    <div className={de.digi_name}>
-                                                        <img src={'/img/detail/name_box.png'} />
-                                                        <span>{nextEvolutions.digimon}</span>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    </SwiperSlide>
-                                ))
+                                                </Link>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))
                             }
                         </Swiper>
                     </div>

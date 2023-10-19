@@ -5,7 +5,8 @@ import krDigimonData from '../../borad/digimondata.json'
 import axios from 'axios';
 import {user_get} from '../../../comp/member/Login'
 import Footer from '@/app/comp/Footer';
-import LoginCheck from '@/app/comp/LoginCheck';
+import Lodding from '@/app/comp/Lodding';
+import { useRouter } from 'next/navigation';
 
 export default function page() {
   // ~~~~기본값 지정~~~~
@@ -15,6 +16,7 @@ export default function page() {
 
   /* 회원정보 */
   let [dataURL, setDataURL] = useState();
+  const [data,setData]=useState();
   const [member,setMember] = useState();
   const [rk,setRk] = useState();
   async function fetchData() {
@@ -40,12 +42,27 @@ export default function page() {
             status = true;
             ctx.beginPath();
         }
-        //클릭 끝
+
+        canvasId.ontouchstart = function(){
+          status = true;
+          ctx.beginPath();
+      }
+
+
+        //클릭 끝 
         canvasId.onmouseup =function(){
           status = false;
             saveSnapshot();
         }
+
+        canvasId.ontouchend =function(){
+          status = false;
+            saveSnapshot();
+        }
+
+
         canvasId.onmousemove = drawMove;
+        canvasId.ontouchmove = drawMove2;
   
         //그림그리는 함수
         function drawMove(e){
@@ -54,6 +71,20 @@ export default function page() {
               ctx.strokeStyle = lineColor;
               ctx.lineTo(e.offsetX,e.offsetY);
               ctx.stroke();
+          }
+        }
+
+        function drawMove2(e){
+          e.preventDefault();
+          if(status===true){
+            var rect = canvasId.getBoundingClientRect();
+            var x = e.touches[0].clientX - rect.left;
+            var y = e.touches[0].clientY - rect.top;
+      
+            ctx.lineWidth = lineSize;
+            ctx.strokeStyle = lineColor;
+            ctx.lineTo(x, y);
+            ctx.stroke();
           }
         }
       //~~~~~~~~~색상 변경~~~~~~~~~
@@ -118,6 +149,8 @@ export default function page() {
       setDataURL(dataURL);
       const mb_id = member.mb_id;
       const nickName = member.mb_nick;
+      const mb_icon = member.mb_icon;
+      const mb_img = member.mb_img;
 
       const date = new Date();
       const y = date.getFullYear();
@@ -125,13 +158,12 @@ export default function page() {
       const d = date.getDate();
       const toDay = `${y}.${m}.${d}`;
 
-      let userData = {mb_id,SDid,nickName,selectedDigimon,dataURL,toDay}
-      console.log(userData);
+      let userData = {mb_id,SDid,nickName,selectedDigimon,dataURL,toDay,mb_icon,mb_img}
       axios.post('/api/borad/write',userData);
 
       //저장 클릭후 로딩창 띄우기
       goNextPage();
-  }else{alert('디지몬을 선택해 주세요')}
+  }else{}
 
   }
 
@@ -145,26 +177,21 @@ export default function page() {
   const canvasRef = useRef(null);
   let [canvasWidth, setCanvasWidth]= useState();
 
-  useEffect(()=>{
-    setTimeout(() => {
-      function resizeCanvas() {
-          const canvas = canvasRef.current;
-          const container = document.body;
-          const width = container.clientWidth;
-          canvas.width = width >= 600 ? 489 : width*0.7;
-          canvas.height = width >= 639 ? 429 : canvasWidth*0.877;
-          setCanvasWidth(canvas.clientWidth);
-        }
-    
-        window.addEventListener('resize',resizeCanvas)
-    
-        resizeCanvas();
-      
-    }, 500);
+  function resizeCanvas() {
+    const canvas = canvasRef.current;
+    if(canvas != null){
+      const container = document.body;
+      const width = container.clientWidth;
+      canvas.width = width >= 600 ? 489 : width*0.7;
+      canvas.height = width >= 639 ? 429 : canvasWidth*0.877;
+      setCanvasWidth(canvas.clientWidth);
 
-    
-    
-  },[canvasWidth])
+    }
+  }
+  useEffect(()=>{
+      window.addEventListener('resize',resizeCanvas)
+      resizeCanvas();
+  },[canvasWidth,member])
 
 
   //~~~~~~~~~~~~선택창 열고닫기~~~~~~~~~~~~
@@ -219,25 +246,28 @@ export default function page() {
 
   //제출 후 다음페이지로 로딩
   const [nextPageOpen, setNextPageOpen] = useState(false);
-    
-  const goNextPage = () => {
+  const nav = useRouter();
+
+  const goNextPage = async () => {
     setNextPageOpen(true);
     document.body.style.overflow = 'hidden';
     setTimeout(function () {
-      window.location.href = '/pages/borad/list';
+      document.body.style.overflow = 'auto';
+      moving('/pages/borad/list')
     }, 3000);
   };
-  
+  const moving = (link)=>{
+      nav.push(link)
+    }
 
-  if(!member) return <></>
+  if(!member || !canvasRef) return <Lodding />
   return (
     <article className={style.board_write}>
-      {/* <LoginCheck />  */}
       <header>
         <figure className={style.logo}><img src='/img/board/write/logo.png'/></figure>
         <div className={style.profile} >
           <img className={style.pfDecoBox} src='/img/board/write/profilebox.png'/>
-          <div className={style.pfInner}>
+          <div className={style.pfInner} onClick={()=>{ moving('/pages/member/mypage') }}>
             <p>[Rk.{rk}]</p>
             <figure className={style.pfNickname}>
               <img src={`/img/main/icon/${member.mb_icon}.png`}/>
@@ -245,7 +275,6 @@ export default function page() {
             </figure>
             <div className={style.pfPictureWrap}>
               <div className={style.pfPicture}>
-                <img className={style.pfPicDeco} src='/img/board/write/pfDeco.png'/>
                 <img className={style.pfPic} src={`/img/main/face/${member.mb_img}.png`}/>
               </div>
             </div>
@@ -307,7 +336,7 @@ export default function page() {
         </div>
 
         <div className={style.save} id="saveId" onClick={wantSave}>
-          <img className={style.saveDeco} src='/img/board/write/saveBtn.png' style={selectedDigimon ? {} : { filter: 'brightness(0.7)' }} />
+          <img className={style.saveDeco} src='/img/board/write/saveBtn.png' style={selectedDigimon ? {} : { filter: 'brightness(0.7)',cursor: 'auto' }} />
         </div>
       </section>
 

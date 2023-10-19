@@ -35,8 +35,10 @@
 // 기본폰트 디지몬 font-family: 'neodgm_code';
 // 노토산스 font-family: 'Noto Sans KR', sans-serif;
 body{margin:0; padding:0; height: 100vh; color: #fff; background-color: #000; font-family: 'neodgm_code';}
-p,h1,ul,li,figure,h2,h3 {margin:0;padding:0; font-family: 'neodgm_code';}
+p,h1,ul,li,figure,h2,h3 {margin:0;padding:0; font-family: 'neodgm_code'; color:#fff}
+span {color:#fff;}
 ul {list-style: none;}
+a {text-decoration: none;}
 *{box-sizing: border-box;}
 
 input::placeholder {color: #fff; font-family: 'neodgm_code'; }
@@ -55,6 +57,37 @@ input::placeholder {color: #fff; font-family: 'neodgm_code'; }
             justify-content: space-around;
             align-items: center;
             img {width: 100%; height: 100%; object-fit: cover; }
+        }
+    }
+}
+
+.Lodding {
+    margin: 0; padding:0;
+    max-width: 640px;
+    width: 100%; height: 100vh;
+    padding:20px; margin: 0px auto;
+    display: flex;
+    justify-content: center; align-items: center;
+    flex-direction: column;
+    position: relative;
+    .bg_video{
+        max-width: 640px;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+    div {
+        position: absolute; top:0; left:0;
+        display: flex;
+        justify-content: center; align-items: center;
+        flex-direction: column;
+        width: 100%; height: 100vh;
+        h1 {
+            color:#fff
+        }
+        img {
+            width: 50%;
+            object-fit: cover;
         }
     }
 }

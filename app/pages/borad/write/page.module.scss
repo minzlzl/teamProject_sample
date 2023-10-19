@@ -21,10 +21,12 @@
 .board_write{
     width: 100%;
     
-    background-image: url('../../../../public/img/board/write/bg_board.png');
+    background-image: url('/img/board/write/bg_board.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(0, 0, 0,40);
+
+    padding-bottom: 185px;
     header{
         padding: 5%;
         @include flex(space-around,){align-items: flex-start;};
@@ -37,7 +39,6 @@
             position: relative;
             .pfDecoBox{
                 position: absolute; top:0; left: 0;
-                z-index: 2;
             }
             .pfInner{
                 position:relative;
@@ -58,7 +59,6 @@
                 .pfNickname{
                     position: absolute; top: -25%; left: 35%;
                     @include flex( );
-                    img{}
                     figcaption{
                         color: #FFF;
                         text-shadow: 2px 1px 0px #1F93FF;
@@ -70,17 +70,15 @@
                     }
                 }
                 .pfPictureWrap{
-                    position: absolute; top: 5%; right: 8.5%;
+                    width: 65px; height: 65px;
+                    position: absolute; top: -80%; right: 6.5%;
                     .pfPicture{
+                        width: 100%;
                         position: relative;
                         margin-right: 30px;
-                        .pfPicDeco{
-                            position: absolute; top:0; left: 0;
-                            transform: translate(-50%,-50%);
-                        }
                         .pfPic{
                             position: absolute; top:0; left: 0;
-                            transform: translate(-50%,-50%);
+                            width: 100%;
                         }
                     }
                 }
@@ -120,9 +118,9 @@
             h2{
                 position: absolute; top:35%; right: 20%;
 
-                color: #F00;
+                color: #FFF;
+                text-shadow: 2px 1px 0px #1F93FF;
                 text-align: center;
-                text-shadow: 2px 1px 0px #005188;
 
                 font-family: NeoDunggeunmo;
                 font-size: 22px;
@@ -168,7 +166,7 @@
                     transform: translate(-50%, 0%);
                     width: 250px;
 
-                    color: #F00;
+                    color: #00F3FF;
                     text-shadow: 2px 1px 0px #005188;
                     font-family: NeoDunggeunmo;
                     font-size: 24px;
@@ -405,7 +403,7 @@
         .title{
             .titleTab{
                 .titleDeco{width: 90%;}
-                h1{font-size: 16px; left: 18%;}
+                h1{font-size: 15px; left: 18%;}
             }
             .selectTab{
                 .selectDeco{width: 90%;}
@@ -523,6 +521,14 @@
                     transform: translate(-9%, -10%);
                     img{width: 20px !important;}
                     figcaption{font-size: 16px !important;}
+                }
+                .pfPictureWrap{
+                    .pfPicture{
+                        .pfPic{
+                            left: 20% !important;
+                            width: 80% !important; 
+                        }
+                    }
                 }
             }
         }

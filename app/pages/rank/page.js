@@ -4,15 +4,22 @@ import rank from './rank.module.scss'
 import Footer from '@/app/comp/Footer';
 import {user_get} from '../../comp/member/Login'
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Lodding from '@/app/comp/Lodding';
 
 export default function page() {
   const nav = useRouter();
   const [member,setMember] = useState();
   const [rk,setRk] = useState();
+  const [rrk,setRrk] = useState();
   async function fetchData() {
       const mb = await user_get()
       setRk(mb.rk.data)
       setMember(mb.data);
+  }
+  async function ranking(){
+    const res = await axios.get('/api/rank');
+    setRrk(res.data)
   }
 
   const moving = (link)=>{
@@ -21,9 +28,10 @@ export default function page() {
 
   useEffect( ()=>{
     fetchData()
+    ranking()
   },[]);
 
-  if(!member) return <></>
+  if(!member || !rk || !rrk) return <Lodding />
   
   return (
     <div className={rank.rank_wrap}>
@@ -48,31 +56,31 @@ export default function page() {
               <li>
                 <p>[RK.2]</p>
                 <div className={rank.best_bg2}>
-                  <figure><img src='/img/rank/face/2.png' alt=''/></figure>
+                  <figure><img src={`/img/rank/face/${rrk[1].mb_img}.png`} alt=''/></figure>
                 </div>
                 <div className={rank.best_txt2}>
-                  <figure><img src='/img/rank/icon/2.png' alt=''/></figure>
-                  <p>아아중독</p>
+                  <figure><img src={`/img/rank/icon/${rrk[1].mb_icon}.png`} alt=''/></figure>
+                  <p>{rrk[1].mb_nick}</p>
                 </div>
               </li>
               <li>
                 <p>[RK.1]</p>
                 <div className={rank.best_bg1}>
-                  <figure><img src='/img/rank/face/1.png' alt=''/></figure>
+                  <figure><img src={`/img/rank/face/${rrk[0].mb_img}.png`} alt=''/></figure>
                 </div>
                 <div className={rank.best_txt1}>
-                  <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                  <p>바닐라라떼</p>
+                  <figure><img src={`/img/rank/icon/${rrk[0].mb_icon}.png`} alt=''/></figure>
+                  <p>{rrk[0].mb_nick}</p>
                 </div>
               </li>
               <li>
                 <p>[RK.3]</p>
                 <div className={rank.best_bg3}>
-                  <figure><img src='/img/rank/face/3.png' alt=''/></figure>
+                  <figure><img src={`/img/rank/face/${rrk[2].mb_img}.png`} alt=''/></figure>
                 </div>
                 <div className={rank.best_txt2}>
-                  <figure><img src='/img/rank/icon/3.png' alt=''/></figure>
-                  <p>디지몬다내꺼</p>
+                  <figure><img src={`/img/rank/icon/${rrk[2].mb_icon}.png`} alt=''/></figure>
+                  <p>{rrk[2].mb_nick}</p>
                 </div>
               </li>
             </ul>
@@ -80,78 +88,18 @@ export default function page() {
         </div>
         <div className={rank.list_wrap}>
           <ul>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
-            <li>
-              <p>[RK.1]</p>
-              <div className={rank.list_name}>
-                <figure><img src='/img/rank/icon/1.png' alt=''/></figure>
-                <p>바닐라라떼</p>
-              </div>
-              <figure><img src='/img/rank/face/1.png' alt=''/></figure>
-            </li>
+            {
+              rrk.slice(3,100).map((v,k)=>(
+              <li key={v.num}>
+                <p>[RK.{k+4}]</p>
+                <div className={rank.list_name}>
+                  <figure><img src={`/img/rank/icon/${v.mb_icon}.png`} alt=''/></figure>
+                  <p>{v.mb_nick}</p>
+                </div>
+                <figure><img src={`/img/rank/face/${v.mb_img}.png`} alt=''/></figure>
+              </li>
+              ))
+            }
           </ul>
         </div>
       </div>

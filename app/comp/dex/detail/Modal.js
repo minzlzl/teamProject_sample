@@ -16,7 +16,9 @@ export function Modal({ DescriptionInModal, clickModal }) {
                             </p>
                         </div>
                     </div>
-                    <span onClick={clickModal}>창닫기</span>
+                    <div className={de.close}>
+                        <p onClick={clickModal}>창닫기</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -26,6 +28,7 @@ export function Modal({ DescriptionInModal, clickModal }) {
 export function Modal2({ clickModal2, DescriptionInModal2 }) {
     const elUl = useRef();
     const [openLiIndex, setOpenLiIndex] = useState(null);
+
     const handleLiClick = (index) => {
         if (openLiIndex === index) {
             setOpenLiIndex(null); // Close the clicked `li` if it's already open.
@@ -50,6 +53,7 @@ export function Modal2({ clickModal2, DescriptionInModal2 }) {
             });
         };
     }, []);
+
     return (
         <section className={de.modal_page_skill}>
             <div className={de.modal_p}>
@@ -58,22 +62,27 @@ export function Modal2({ clickModal2, DescriptionInModal2 }) {
                         <h3>SKILL LIST</h3>
                         <ul className={de.skill_list} ref={elUl}>
                             {
-                                DescriptionInModal2.skills.length <= 0 ? <li><p>No data</p></li>
-                            :
-                                DescriptionInModal2.skills.map((item, index) => (
-                               
+                                DescriptionInModal2.skills.length <= 0 ?
+                                    <li><p>No Data</p></li>
+                                    :
+                                    DescriptionInModal2.skills.map((item, index) => (
                                         <li key={index}>
-                                            <p>{item.skill}</p>
+                                            <p >{item.skill}</p>
                                             <div className={de.skill_description} style={{ display: openLiIndex === index ? 'block' : 'none' }}>
                                                 {
-                                                    item.description == ' ' || item.description == '' ? <p>There are no detailed information.</p> : <p>{item.description}</p> 
+                                                    item.description === " "
+                                                        ? <p>There are no detailed information.</p>
+                                                        : <p>{item.description}</p>
                                                 }
                                             </div>
                                         </li>
-                            ))}
+                                    ))
+                            }
                         </ul>
                     </div>
-                    <p onClick={() => clickModal2()}>창닫기</p>
+                    <div className={de.close_btn}>
+                        <p onClick={() => clickModal2()}>창닫기</p>
+                    </div>
                 </div>
             </div>
         </section>

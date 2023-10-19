@@ -22,7 +22,6 @@ export default function page() {
   };
 
   return (
-     
           <article className={style.main_intro}>
             <video className={style.bg_video} autoPlay muted loop playsInline src='/img/background.mp4'/>
             <figure className={`${style.main_logo} ${style.bg}`}>

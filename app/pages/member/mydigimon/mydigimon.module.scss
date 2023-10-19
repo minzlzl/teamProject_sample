@@ -9,66 +9,55 @@
     margin: 0 auto;
     padding: 50px 0 150px;
     .user_info {
-        width: 36.25rem;
-        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        p {
-            width: 8.4375rem;
-            img {
-            }
-        }
         .info_box {
-            width: 26.0625rem;
-            height: 7.4375rem;
-            background-image: url("/img/detail/info_box.png");
+            width: 417px;
+            height: 119px;
+            background-image: url("../../../../public/img/detail/info_box.png");
             background-repeat: no-repeat;
-            background-size: 26.0625rem 7.4375rem;
             position: relative;
             .inner_box {
-                width: 18.75rem;
-                height: 6.25rem;
-                padding: 1.5rem 0 0;
+                width: 300px;
+                height: 100px;
+                padding: 24px 0 0;
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
                 span {
-                    width: 6.25rem;
-                    padding-top: 1.25rem;
-                    font-size: 1.375rem;
+                    width: 100px;
+                    padding-top: 20px;
+                    font-size: 22px;
                     text-align: center;
-                    text-shadow: 0.125rem 0.0625rem 0 #1f93ff;
+                    text-shadow: 2px 1px 0 #1f93ff;
                 }
                 > div {
-                    width: 11.25rem;
-                    height: 3.75rem;
+                    width: 180px;
+                    height: 60px;
                     padding: 0;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     img {
-                        width: 1.5rem;
-                        margin: 0.25rem 0;
+                        width: 24px;
+                        margin: 4px 0;
                     }
                     p {
-                        width: 9.375rem;
                         margin: 0;
-                        font-size: 1.5rem;
-                        text-shadow: 0.125rem 0.0625rem 0 #1f93ff;
+                        font-size: 24px;
+                        text-shadow: 2px 1px 0 #1f93ff;
                     }
                 }
             }
             .user_profile {
                 position: absolute;
-                right: 1.8125rem;
-                top: 1.125rem;
+                right: 30px;
+                top: 20px;
                 > p {
-                    width: 4.375rem;
-                    height: 4.375rem;
                     img {
-                        width: 4.25rem;
-                        height: 4.25rem;
+                        width: 70px;
+                        height: 70px;
                     }
                 }
             }
@@ -77,9 +66,9 @@
     .digidex {
         .dex_box {
             position: relative;
-            padding: 0 5%;
+            padding: 0 24px;
             p {
-                padding: 10px 0;
+                padding: 14px 0;
                 img {
                     width: 300px;
                     height: 70px;
@@ -88,147 +77,93 @@
             span {
                 position: absolute;
                 left: 120px;
-                top: 32px;
+                top: 38px;
                 color: #00f3ff;
                 text-shadow: 2px 1px 0 #1f93ff;
                 font-size: 26px;
                 letter-spacing: 2px;
             }
         }
-        .search_area {
-            form {
-                display: flex;
-                align-items: center;
-                position: relative;
-                margin-bottom: 2.25rem;
-                label {
-                    margin: 0 auto;
-                    input:focus {
-                        outline: none;
-                    }
-                    &:nth-of-type(1) {
-                        background-image: url("/img/detail/search_box.png");
-                        background-repeat: no-repeat;
-                        background-size: 100% 100%;
-                        width: 90vw;
-                        height: 9vh;
-                        input {
-                            font-family: "Noto Sans KR";
-                            color: #ffffff;
-                            width: 18.75rem;
-                            height: 3.125rem;
-                            font-size: 1rem;
-                            margin: 0 0 0 1.875rem;
-                            transform: translateY(0.875rem);
-                        }
-                    }
-                    &:nth-of-type(2) {
-                        position: absolute;
-                        right: 2.25rem;
-                        bottom: 1rem;
-                        background-image: url("/img/detail/search_btn.png");
-                        background-repeat: no-repeat;
-                        background-size: 100% 100%;
-                        width: 6rem;
-                        height: 3.125rem;
-                        input {
-                            width: 6rem;
-                            height: 3.125rem;
-                            color: #092b4f;
-                            font-size: 1rem;
-                            font-family: "neodgm_code";
-                            text-shadow: 0.125rem 0.0625rem 0 #1f93ff;
-                        }
-                    }
-                    input {
-                        border: none;
-                        background: none;
-                    }
-                }
-            }
-        }
     }
     .data_list {
-        transform: translateY(-20px);
-        .btn_list {
-            width: 100%;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            .btn {
-                position: relative;
-                width: 200px;
-                height: 50px;
-                background-image: url("/img/detail/non_box.png");
-                background-repeat: no-repeat;
-                background-position: 50% 28%;
-                opacity: 0.5;
-                &.active {
-                    opacity: 1;
-                }
-                cursor: pointer;
-                p {
-                    position: absolute;
-                    left: 64px;
-                    top: 24px;
-                    letter-spacing: 3px;
-                    font-size: 20px;
-                    text-shadow: 2px 1px 0 #1f93ff;
-                }
-            }
+        p {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 0;
+            font-size: 18px;
         }
         .digi_list {
             background-image: url("/img/detail/list_bg.png");
             background-repeat: no-repeat;
-            background-size: 640px 1080px;
+            background-size: 640px 600px;
             padding: 30px 0;
+            height: 54vh;
             div {
                 ul {
                     max-width: 560px;
-                    height: 40vh;
+                    height: 46vh;
                     margin: 0 auto;
                     padding-bottom: 20px;
-                    overflow: scroll;
+                    overflow: auto;
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
+                    .nondata {
+                        display: flex;
+                        height: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        img {
+                            width: 50%;
+                            object-fit: cover;
+                        }
+                    }
                     .Evolution_list {
                         width: 170px;
                         margin-bottom: 20px;
                         .Evolution_data {
                             width: 140px;
                             margin: 0 auto;
+                            position: relative;
                             .picture {
                                 display: inline-block;
                                 position: relative;
                                 width: 136px;
                                 height: 168px;
                                 img {
-                                    opacity: 70%;
+                                    opacity: 1;
                                 }
                                 .digimon {
                                     position: absolute;
                                     left: 24px;
-                                    top: 32px;
+                                    top: 42px;
                                     .digi_picture {
-                                        width: 95px;
-                                        height: 105px;
+                                        width: 100px;
+                                        height: 110px;
                                         border: 2px solid #00f3ff;
-                                        &.active {
-                                            opacity: 1;
-                                        }
                                     }
                                     p {
+                                        width: fit-content;
                                         position: absolute;
                                         left: -16px;
                                         top: -20px;
                                         .mask {
                                             z-index: 5;
-                                            &.active {
-                                                opacity: 0;
-                                            }
+                                            opacity: 0;
                                         }
                                     }
+                                }
+                            }
+                            .out_digi {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 36%;
+                                cursor: pointer;
+                                img {
+                                    width: 100%;
                                 }
                             }
                             .digi_name {
@@ -377,7 +312,7 @@
             width: 100%;
             .dex_box {
                 position: relative;
-                padding: 0 5%;
+                padding: 0 24px;
                 p {
                     padding: 10px 0;
                     img {
@@ -395,85 +330,13 @@
                     letter-spacing: 2px;
                 }
             }
-            .search_area {
-                form {
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    margin-bottom: 2.25rem;
-                    label {
-                        margin: 0 auto;
-                        input:focus {
-                            outline: none;
-                        }
-                        &:nth-of-type(1) {
-                            background-image: url("/img/detail/search_box.png");
-                            background-repeat: no-repeat;
-                            background-size: 100% 100%;
-                            width: 90vw;
-                            height: 10vh;
-                            input {
-                                font-family: "Noto Sans KR";
-                                color: #ffffff;
-                                width: 18.75rem;
-                                height: 3.125rem;
-                                font-size: 1rem;
-                                margin: 0.5rem 0 0 1.875rem;
-                                transform: translateY(0.875rem);
-                            }
-                        }
-                        &:nth-of-type(2) {
-                            position: absolute;
-                            right: 2.875rem;
-                            bottom: 1rem;
-                            background-image: url(/img/detail/search_btn.png);
-                            background-repeat: no-repeat;
-                            background-size: 100% 100%;
-                            width: 7.1875rem;
-                            height: 3.4375rem;
-                            input {
-                                width: 7.1875rem;
-                                height: 3.125rem;
-                                color: #092b4f;
-                                font-size: 1.125rem;
-                                font-family: "neodgm_code";
-                                text-shadow: 0.125rem 0.0625rem 0 #1f93ff;
-                            }
-                        }
-                        input {
-                            border: none;
-                            background: none;
-                        }
-                    }
-                }
-            }
         }
         .data_list {
-            transform: translateY(-20px);
-            .btn_list {
-                width: 100%;
-                display: flex;
-                align-items: flex-end;
-                justify-content: center;
-                transform: translateX(-10px);
-                .btn {
-                    position: relative;
-                    width: 182px;
-                    height: 50px;
-                    background-image: url(/img/detail/non_box.png);
-                    background-repeat: no-repeat;
-                    background-position: 34% 32%;
-                    background-size: 125% 220%;
-                    cursor: pointer;
-                    p {
-                        position: absolute;
-                        left: 34%;
-                        top: 24px;
-                        letter-spacing: 3px;
-                        font-size: 20px;
-                        text-shadow: 2px 1px 0 #1f93ff;
-                    }
-                }
+            p {
+                width: 90%;
+                margin: 0 auto;
+                padding: 10px 0;
+                font-size: 1rem;
             }
             .digi_list {
                 background-image: url("/img/detail/list_bg.png");
@@ -501,12 +364,13 @@
                                     width: 136px;
                                     height: 168px;
                                     img {
-                                        opacity: 70%;
+                                        width: 100%;
+                                        opacity: 1;
                                     }
                                     .digimon {
                                         position: absolute;
-                                        left: 24px;
-                                        top: 32px;
+                                        left: 21px;
+                                        top: 42px;
                                         .digi_picture {
                                             width: 95px;
                                             height: 105px;
@@ -526,6 +390,16 @@
                                                 }
                                             }
                                         }
+                                    }
+                                }
+                                .out_digi {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 4px;
+                                    width: 36%;
+                                    cursor: pointer;
+                                    img {
+                                        width: 100%;
                                     }
                                 }
                                 .digi_name {
@@ -696,85 +570,13 @@
                     letter-spacing: 2px;
                 }
             }
-            .search_area {
-                form {
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    margin-bottom: 2.25rem;
-                    label {
-                        margin: 0 auto;
-                        input:focus {
-                            outline: none;
-                        }
-                        &:nth-of-type(1) {
-                            background-image: url("/img/detail/search_box.png");
-                            background-repeat: no-repeat;
-                            background-size: 100% 100%;
-                            width: 90vw;
-                            height: 8vh;
-                            input {
-                                font-family: "Noto Sans KR";
-                                color: #ffffff;
-                                width: 18.75rem;
-                                height: 2.8rem;
-                                font-size: 0.75rem;
-                                margin: 0 0 0 1.875rem;
-                                padding: 10px 0;
-                                transform: translateY(0.875rem);
-                            }
-                        }
-                        &:nth-of-type(2) {
-                            position: absolute;
-                            right: 2rem;
-                            bottom: 0.625rem;
-                            background-image: url("/img/detail/search_btn.png");
-                            background-repeat: no-repeat;
-                            background-size: 100% 100%;
-                            width: 5rem;
-                            height: 3.125rem;
-                            input {
-                                width: 5rem;
-                                height: 3.125rem;
-                                color: #092b4f;
-                                font-size: 1rem;
-                                font-family: "neodgm_code";
-                                text-shadow: 0.125rem 0.0625rem 0 #1f93ff;
-                            }
-                        }
-                        input {
-                            border: none;
-                            background: none;
-                        }
-                    }
-                }
-            }
         }
         .data_list {
-            transform: translateY(-20px);
-            .btn_list {
-                width: 100%;
-                display: flex;
-                align-items: flex-end;
-                justify-content: center;
-                .btn {
-                    position: relative;
-                    width: 182px;
-                    height: 50px;
-                    background-image: url(/img/detail/non_box.png);
-                    background-repeat: no-repeat;
-                    background-position: 34% 32%;
-                    background-size: 125% 220%;
-                    cursor: pointer;
-                    p {
-                        position: absolute;
-                        left: 32%;
-                        top: 24px;
-                        letter-spacing: 3px;
-                        font-size: 18px;
-                        text-shadow: 2px 1px 0 #1f93ff;
-                    }
-                }
+            p {
+                width: 90%;
+                margin: 0 auto;
+                padding: 10px 0;
+                font-size: 18px;
             }
             .digi_list {
                 background-image: url("/img/detail/list_bg.png");
@@ -802,12 +604,13 @@
                                     width: 136px;
                                     height: 168px;
                                     img {
-                                        opacity: 70%;
+                                        width: 100%;
+                                        opacity: 1;
                                     }
                                     .digimon {
                                         position: absolute;
-                                        left: 24px;
-                                        top: 32px;
+                                        left: 21px px;
+                                        top: 40px;
                                         .digi_picture {
                                             width: 95px;
                                             height: 105px;
@@ -827,6 +630,16 @@
                                                 }
                                             }
                                         }
+                                    }
+                                }
+                                .out_digi {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 4px;
+                                    width: 36%;
+                                    cursor: pointer;
+                                    img {
+                                        width: 100%;
                                     }
                                 }
                                 .digi_name {
