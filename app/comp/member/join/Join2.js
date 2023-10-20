@@ -16,10 +16,27 @@ export default function Join2({setList,setNickName,setUimg}) {
   let [ii,setIi] = useState();
   let elImg = useRef();
   
- 
+  
+  //alert 
+  const [altext, setAltext] = useState();
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+  
 
   const [name, setName] = useState(''); 
   const maxCharacters = 6;
+
+
+   //alert창 열고 닫기
+    const alertOpen = (text) =>{
+    setAltext(text)
+    setIsAlertOpen(true);    
+  };
+
+  const alertClose = () =>{
+    setIsAlertOpen(false);
+    if(altext == "닉네임을 입력해주세요." || altext == '2글자 이상 입력해주세요.' || altext == '캐릭터를 선택해주세요.' ){
+    }
+  };
 
   const inputChange = (event) => {
     const inputValue = event.target.value;
@@ -27,28 +44,31 @@ export default function Join2({setList,setNickName,setUimg}) {
       setName(inputValue);
     }
   };
-  let n=0;
   const img = function(k){
-    elImg.current.childNodes[0].childNodes[n].childNodes[0].classList.remove(join.active)
-    elImg.current.childNodes[0].childNodes[k-1].childNodes[0].classList.add(join.active)
-    n=k-1;
+    for(let i=0; i<8; i++){
+      if(i == k - 1) {
+        elImg.current.childNodes[0].childNodes[i].childNodes[0].classList.add(join.active)
+      } else {
+        elImg.current.childNodes[0].childNodes[i].childNodes[0].classList.remove(join.active)
+      }
+    }
     setIi(k);
   }
   const con2Click = ()=>{
     let nickNames = input.current.value;
     let nicklen = nickNames.split("");
     if(nickNames === ``){
-      alert("닉네임을 입력해주세요.");
+      alertOpen("닉네임을 입력해주세요.");
       input.current.focus();
       return false;
     }
     if(nicklen.length < 2){
-      alert("2글자 이상 입력해주세요.");
+      alertOpen("2글자 이상 입력해주세요.");
       input.current.focus();
       return false;
     }
     if(!ii) {
-      alert("캐릭터를 선택해주세요.");
+      alertOpen("캐릭터를 선택해주세요.");
       return false;
     }
       setList(3)
@@ -107,6 +127,17 @@ export default function Join2({setList,setNickName,setUimg}) {
           </div>
         </div>
       </div>
+      <div className={join.alert_modal} onChange={() => openAlert()}>
+        {isAlertOpen && (
+          <form className= {join.alert_warning}>
+          <img src='/img/member/join/modal.png' alt=''/>
+          <div className={join.alert_text}>
+          <p>{altext}</p>
+          <input type='image' src='/img/member/mypage/ok.png' className = {join.alert_btn}  onClick={() => alertClose()}/>
+          </div>
+        </form>
+        )}
+        </div>
     </div>
   )
 }

@@ -2,13 +2,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation';
 import style from './pages/intro/page.module.scss'
-import KakaoLogin from 'react-kakao-login';
-import axios from 'axios';
 import LoginCheck from './comp/LoginCheck';
 export default function page() {
     const [loading, setLoading] = useState(true);
     const loadingimg = useRef();
-    const navi = useRouter()
 
     useEffect(() => {
         //로딩 화살표 ing

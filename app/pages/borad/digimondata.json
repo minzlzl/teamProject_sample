@@ -16,16 +16,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Holy_Angemon.png"
     },
     {
-      "id": 4,
-      "name": "에이션트비트몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Ancient_Beatmon.png"
-    },
-    {
-      "id": 6,
-      "name": "풋몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Footmon.png"
-    },
-    {
       "id": 7,
       "name": "아포카리몬",
       "image": "https://www.digi-api.com/images/digimon/w/Apocalymon.png"
@@ -46,11 +36,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Greymon_(2010_Anime_Version).png"
     },
     {
-      "id": 17,
-      "name": "그레이스노바몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Grace_Novamon.png"
-    },
-    {
       "id": 19,
       "name": "가드로몬",
       "image": "https://www.digi-api.com/images/digimon/w/Guardromon.png"
@@ -66,11 +51,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Sagittarimon.png"
     },
     {
-      "id": 22,
-      "name": "리노몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Rhinomon.png"
-    },
-    {
       "id": 24,
       "name": "사이버드라몬",
       "image": "https://www.digi-api.com/images/digimon/w/Cyberdramon.png"
@@ -81,11 +61,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Pukamon.png"
     },
     {
-      "id": 27,
-      "name": "왕잠자리몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Sand_Yanmamon.png"
-    },
-    {
       "id": 28,
       "name": "헉몬",
       "image": "https://www.digi-api.com/images/digimon/w/Hackmon.png"
@@ -94,11 +69,6 @@
       "id": 29,
       "name": "푸르르몬",
       "image": "https://www.digi-api.com/images/digimon/w/Pururumon.png"
-    },
-    {
-      "id": 30,
-      "name": "아레스타드라몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Arresterdramon.png"
     },
     {
       "id": 33,
@@ -114,11 +84,6 @@
       "id": 36,
       "name": "알라우몬",
       "image": "https://www.digi-api.com/images/digimon/w/Alraumon.png"
-    },
-    {
-      "id": 38,
-      "name": "미믹몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Mimicmon.png"
     },
     {
       "id": 39,
@@ -141,11 +106,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Bio_Coatlmon.png"
     },
     {
-      "id": 45,
-      "name": "그린쉘몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Mori_Shellmon.png"
-    },
-    {
       "id": 52,
       "name": "꼬마키위몬",
       "image": "https://www.digi-api.com/images/digimon/w/Chibi_Kiwimon.png"
@@ -154,11 +114,6 @@
       "id": 54,
       "name": "파라오몬",
       "image": "https://www.digi-api.com/images/digimon/w/Pharaohmon.png"
-    },
-    {
-      "id": 56,
-      "name": "수신몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Suijinmon.png"
     },
     {
       "id": 58,
@@ -174,11 +129,6 @@
       "id": 60,
       "name": "지오그레이몬",
       "image": "https://www.digi-api.com/images/digimon/w/Geo_Greymon.png"
-    },
-    {
-      "id": 63,
-      "name": "바커스몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Bacchusmon.png"
     },
     {
       "id": 64,
@@ -221,16 +171,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Shellmon.png"
     },
     {
-      "id": 79,
-      "name": "카르마라몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Calamaramon.png"
-    },
-    {
-      "id": 80,
-      "name": "네오데블몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Neo_Devimon.png"
-    },
-    {
       "id": 84,
       "name": "발바몬",
       "image": "https://www.digi-api.com/images/digimon/w/Barbamon.png"
@@ -259,11 +199,6 @@
       "id": 93,
       "name": "왕거북몬",
       "image": "https://www.digi-api.com/images/digimon/w/Archelomon.png"
-    },
-    {
-      "id": 94,
-      "name": "레이브몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Ravmon.png"
     },
     {
       "id": 95,
@@ -341,29 +276,9 @@
       "image": "https://www.digi-api.com/images/digimon/w/Mihiramon.png"
     },
     {
-      "id": 127,
-      "name": "트로피아몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Toropiamon.png"
-    },
-    {
-      "id": 128,
-      "name": "블래스트몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Blastmon.png"
-    },
-    {
-      "id": 137,
-      "name": "발키리몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Valkyrimon.png"
-    },
-    {
       "id": 139,
       "name": "볼프몬",
       "image": "https://www.digi-api.com/images/digimon/w/Wolfmon.png"
-    },
-    {
-      "id": 140,
-      "name": "오니스몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Ornismon.png"
     },
     {
       "id": 141,
@@ -381,24 +296,9 @@
       "image": "https://www.digi-api.com/images/digimon/w/Hookmon.png"
     },
     {
-      "id": 149,
-      "name": "슈라우드몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Shroudmon.png"
-    },
-    {
-      "id": 152,
-      "name": "프테라몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Pteranomon.png"
-    },
-    {
       "id": 154,
       "name": "유라몬",
       "image": "https://www.digi-api.com/images/digimon/w/Yuramon.png"
-    },
-    {
-      "id": 156,
-      "name": "하니몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Honeybeemon.png"
     },
     {
       "id": 158,
@@ -409,11 +309,6 @@
       "id": 159,
       "name": "바푸몬",
       "image": "https://www.digi-api.com/images/digimon/w/Burpmon.png"
-    },
-    {
-      "id": 160,
-      "name": "아사루트몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Assaultmon.png"
     },
     {
       "id": 162,
@@ -451,19 +346,9 @@
       "image": "https://www.digi-api.com/images/digimon/w/Psychemon.png"
     },
     {
-      "id": 175,
-      "name": "토게모구몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Togemogumon.png"
-    },
-    {
       "id": 176,
       "name": "히포그리포몬",
       "image": "https://www.digi-api.com/images/digimon/w/Hippogriffomon.png"
-    },
-    {
-      "id": 188,
-      "name": "카리스몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Callismon.png"
     },
     {
       "id": 191,
@@ -521,21 +406,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Prince_Mamemon.png"
     },
     {
-      "id": 228,
-      "name": "버밀리몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Vermillimon.png"
-    },
-    {
-      "id": 233,
-      "name": "가오리몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Mantaraymon.png"
-    },
-    {
-      "id": 235,
-      "name": "피콕몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Peacockmon.png"
-    },
-    {
       "id": 236,
       "name": "비트몬",
       "image": "https://www.digi-api.com/images/digimon/w/Bitmon.png"
@@ -556,24 +426,9 @@
       "image": "https://www.digi-api.com/images/digimon/w/Angoramon.png"
     },
     {
-      "id": 247,
-      "name": "반쵸록몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Bancho_Golemon.png"
-    },
-    {
-      "id": 256,
-      "name": "메타몰몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Metamormon.png"
-    },
-    {
       "id": 257,
       "name": "구미호몬",
       "image": "https://www.digi-api.com/images/digimon/w/Kyubimon.png"
-    },
-    {
-      "id": 262,
-      "name": "타이타몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Titamon.png"
     },
     {
       "id": 264,
@@ -601,19 +456,9 @@
       "image": "https://www.digi-api.com/images/digimon/w/Dodomon.png"
     },
     {
-      "id": 274,
-      "name": "마르스몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Marsmon.png"
-    },
-    {
       "id": 275,
       "name": "그레이몬",
       "image": "https://www.digi-api.com/images/digimon/w/Greymon.png"
-    },
-    {
-      "id": 276,
-      "name": "아라크네몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Archnemon.png"
     },
     {
       "id": 281,
@@ -676,11 +521,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Sakuttomon.png"
     },
     {
-      "id": 301,
-      "name": "벌처몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Vulturemon.png"
-    },
-    {
       "id": 303,
       "name": "스파이더몬",
       "image": "https://www.digi-api.com/images/digimon/w/Dokugumon.png"
@@ -694,11 +534,6 @@
       "id": 315,
       "name": "라라몬",
       "image": "https://www.digi-api.com/images/digimon/w/Lalamon.png"
-    },
-    {
-      "id": 320,
-      "name": "사라만다몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Salamandamon.png"
     },
     {
       "id": 325,
@@ -1061,11 +896,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Pyocomon.png"
     },
     {
-      "id": 824,
-      "name": "피드몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Pidmon.png"
-    },
-    {
       "id": 828,
       "name": "뽀글몬",
       "image": "https://www.digi-api.com/images/digimon/w/Bubbmon.png"
@@ -1099,11 +929,6 @@
       "id": 885,
       "name": "도쿠네몬",
       "image": "https://www.digi-api.com/images/digimon/w/Dokunemon.png"
-    },
-    {
-      "id": 890,
-      "name": "고래몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Whamon_Perfect.png"
     },
     {
       "id": 900,
@@ -1181,11 +1006,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Leomon.png"
     },
     {
-      "id": 1012,
-      "name": "가루몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Gururumon.png"
-    },
-    {
       "id": 1017,
       "name": "포로몬",
       "image": "https://www.digi-api.com/images/digimon/w/Poromon.png"
@@ -1229,11 +1049,6 @@
       "id": 1079,
       "name": "토리에몬",
       "image": "https://www.digi-api.com/images/digimon/w/Turuiemon.png"
-    },
-    {
-      "id": 1084,
-      "name": "도미니몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Dominimon.png"
     },
     {
       "id": 1094,
@@ -1341,11 +1156,6 @@
       "image": "https://www.digi-api.com/images/digimon/w/Ofanimon.png"
     },
     {
-      "id": 1245,
-      "name": "비너스몬",
-      "image": "https://www.digi-api.com/images/digimon/w/Venusmon.png"
-    },
-    {
       "id": 1246,
       "name": "엑스브이몬",
       "image": "https://www.digi-api.com/images/digimon/w/XV-mon.png"
@@ -1434,6 +1244,276 @@
       "id": 1417,
       "name": "워그레이몬",
       "image": "https://www.digi-api.com/images/digimon/w/War_Greymon.png"
+    },
+    {
+      "id": 1150,
+      "name": "리리스몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Lilithmon.png"
+    },
+    {
+      "id": 1201,
+      "name": "리바이어몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Leviamon.png"
+    },
+    {
+      "id": 803,
+      "name": "벨페몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Belphemon(Rage_Mode).png"
+    },
+    {
+      "id": 355,
+      "name": "매그너몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Magnamon.png"
+    },
+    {
+      "id": 703,
+      "name": "매그너가루몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Magna_Garurumon.png"
+    },
+    {
+      "id": 1389,
+      "name": "슬레이프몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Sleipmon.png"
+    },
+    {
+      "id": 419,
+      "name": "듀나스몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Dynasmon.png"
+    },
+    {
+      "id": 502,
+      "name": "로드나이트몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Lord_Knightmon.png"
+    },
+    {
+      "id": 974,
+      "name": "청룡몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Qinglongmon.png"
+    },
+    {
+      "id": 302,
+      "name": "번개드라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Lighdramon.png"
+    },
+    {
+      "id": 1338,
+      "name": "황제드라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Imperialdramon(Fighter_Mode).png"
+    },
+    {
+      "id": 1334,
+      "name": "알파몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Alphamon.png"
+    },
+    {
+      "id": 959,
+      "name": "즈바몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Zubamon.png"
+    },
+    {
+      "id": 808,
+      "name": "아트라캅테리몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Atlur_Kabuterimon_(Red).png"
+    },
+    {
+      "id": 1155,
+      "name": "베놈묘티스몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Venom_Vamdemon.png"
+    },
+    {
+      "id": 333,
+      "name": "스사노오몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Susanoomon.png"
+    },
+    {
+      "id": 1028,
+      "name": "카이젤그레이몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Kaiser_Greymon.png"
+    },
+    {
+      "id": 1181,
+      "name": "샤인그레이몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Shine_Greymon.png"
+    },
+    {
+      "id": 967,
+      "name": "라이즈그레이몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Rize_Greymon.png"
+    },
+    {
+      "id": 904,
+      "name": "빅토리그레이몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Victory_Greymon.png"
+    },
+    {
+      "id": 1167,
+      "name": "미라쥬가오가몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Mirage_Gaogamon.png"
+    },
+    {
+      "id": 916,
+      "name": "케루비몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Cherubimon_(Virtue).png"
+    },
+    {
+      "id": 1345,
+      "name": "케루비몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Cherubimon_(Vice).png"
+    },
+    {
+      "id": 1220,
+      "name": "현무몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Xuanwumon.png"
+    },
+    {
+      "id": 1087,
+      "name": "아그니몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Agnimon.png"
+    },
+    {
+      "id": 943,
+      "name": "브리트라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Vritramon.png"
+    },
+    {
+      "id": 1311,
+      "name": "샤크라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Sakuyamon.png"
+    },
+    {
+      "id": 1412,
+      "name": "잎새몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Leafmon.png"
+    },
+    {
+      "id": 1256,
+      "name": "우파몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Upamon.png"
+    },
+    {
+      "id": 1138,
+      "name": "하얀몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Yukimi_Botamon.png"
+    },
+    {
+      "id": 1009,
+      "name": "퍼그몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Pagumon.png"
+    },
+    {
+      "id": 321,
+      "name": "스노우아구몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Yuki_Agumon.png"
+    },
+    {
+      "id": 348,
+      "name": "츄몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Tyumon.png"
+    },
+    {
+      "id": 743,
+      "name": "감마몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Gammamon.png"
+    },
+    {
+      "id":868,
+      "name": "베어몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Bearmon.png"
+    },
+    {
+      "id":980,
+      "name": "가지몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Gazimon.png"
+    },
+    {
+      "id":1003,
+      "name": "코로나몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Coronamon.png"
+    },
+    {
+      "id":1204,
+      "name": "쿠네몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Kunemon.png"
+    },
+    {
+      "id":1202,
+      "name": "톱니몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Hagurumon.png"
+    },
+    {
+      "id":164,
+      "name": "배드퍼펫몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Waru_Monzaemon.png"
+    },
+    {
+      "id":276,
+      "name": "아라크네몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Archnemon.png"
+    },
+    {
+      "id":411,
+      "name": "스타몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Starmon.png"
+    },
+    {
+      "id":451,
+      "name": "슈퍼스타몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Superstarmon.png"
+    },
+    {
+      "id":536,
+      "name": "키메라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Chimairamon.png"
+    },
+    {
+      "id":748,
+      "name": "샤벨레오몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Saber_Leomon.png"
+    },
+    {
+      "id":1390,
+      "name": "콩알몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Mamemon.png"
+    },
+    {
+      "id":1034,
+      "name": "베타몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Betamon.png"
+    },
+    {
+      "id":1040,
+      "name": "케르베로스몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Cerberumon.png"
+    },
+    {
+      "id":1267,
+      "name": "토이아구몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Toy_Agumon.png"
+    },
+    {
+      "id":579,
+      "name": "카우보이몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Revolmon.png"
+    },
+    {
+      "id":1135,
+      "name": "피코데블몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Pico_Devimon.png"
+    },
+    {
+      "id":857,
+      "name": "미이라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Mummymon.png"
+    },
+    {
+      "id":1165,
+      "name": "메라몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Meramon.png"
+    },
+    {
+      "id":1177,
+      "name": "꼬끼몬",
+      "image":  "https://digimon-api.com/images/digimon/w/Cockatrimon.png"
     }
   ],
   "pageable": {

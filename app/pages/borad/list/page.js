@@ -28,11 +28,6 @@ export default function page() {
     fetchData();
   },[])
 
-  // //DB최신순으로 정렬
-  // const reverseData = [...data.sort((a,b)=> b.num - a.num )];
-  // data.sort((a, b) => b.num - a.num);
-  // console.log(reverseData);
-
   //li 10개로 제한, 더보기버튼
   const initItemShow = 10;
   const itemsPerLoad = 10;
@@ -50,7 +45,6 @@ export default function page() {
   if(!member || !data){ return <Lodding />}
   return (
     <article className={style.board_list}>
-      {/* <LoginCheck />  */}
       <header>
         <figure className={style.logo}><img src='/img/board/write/logo.png'/></figure>
         <div className={style.profile}>

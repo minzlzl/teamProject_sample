@@ -12,8 +12,25 @@ export default function Join5({setList,cc,setCc}) {
   const [st,setSt] = useState(0);
   const [kk,setKk] = useState();
 
+  //alert 
+const [altext, setAltext] = useState();
+const [isAlertOpen, setIsAlertOpen] = useState(false);
+
+
   const cc_name = ['기적이','사랑이','순수가','빛이','지식이','희망이','친절이','용기가','성실이'];
 
+  //alert창 열고 닫기
+  const alertOpen = (text) =>{
+    setAltext(text)
+    setIsAlertOpen(true);    
+  };
+
+  const alertClose = () =>{
+    setIsAlertOpen(false);
+    if(altext == "캡슐을 선택해주세요."){
+      location.reload();
+    }
+  };
 
   useEffect(()=>{
     winHeight.current.style.setProperty('height', `${window.innerHeight}px`);
@@ -34,7 +51,7 @@ export default function Join5({setList,cc,setCc}) {
 
     const con5Click = ()=>{
       if(st <= 0) {
-        alert("캡슐을 선택해주세요.")
+        alertOpen("캡슐을 선택해주세요.")
       } else {
         blur.current.style = `display:block`;
         modal.current.style = `display:block`;
@@ -92,6 +109,18 @@ export default function Join5({setList,cc,setCc}) {
           </div>
         </div>
       </div>
+      <div className={join.alert_modal} onChange={() => openAlert()}>
+        {isAlertOpen && (
+          <form className= {join.alert_warning}>
+          <img src='/img/member/join/modal.png' alt=''/>
+          <div className={join.alert_text}>
+          <p>{altext}</p>
+          <input type='image' src='/img/member/mypage/ok.png' className = {join.alert_btn}  onClick={() => alertClose()}/>
+          </div>
+        </form>
+        )}
+        </div>
+
     </div>
   )
 }

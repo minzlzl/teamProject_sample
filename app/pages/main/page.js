@@ -71,15 +71,15 @@ const getFile = async function(){
   
   useEffect(()=>{
     //input.current.focus();
-    fetchData()
-    randigimon()
-    getFile(); getdigimon()
+    fetchData();
+    randigimon();
+    getFile(); 
+    getdigimon();
   },[]);
   
 
   //alert창 열고 닫기
   const alertOpen = (text) =>{
-    console.log('a');
     setAltext(text)
     setIsAlertOpen(true);
   };
@@ -90,7 +90,6 @@ const getFile = async function(){
   const moving = (link)=>{
     nav.push(link)
   }
-console.log(isAlertOpen);
 
   const ser = (e)=>{
     e.preventDefault();

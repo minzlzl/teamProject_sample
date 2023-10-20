@@ -98,7 +98,7 @@ export default function page() {
   };
 
 
-  const nickchang = (e)=>{
+  const nickchang =async (e)=>{
     e.preventDefault();
     const mb_nick = e.target.mb_nick.value;
     const nickLangth = mb_nick.split("");
@@ -108,11 +108,12 @@ export default function page() {
       //alert("닉네임은 2~6글자로 만들어주세요!");
     } else {
       const send = {id:member.mb_id,nick:mb_nick}
-      axios.post('/api/member/mypage/nick',send)
+      const req = await axios.post('/api/member/mypage/nick',send)
+      console.log(req);
+      if(req.data == false) {alertOpen('중복 된 닉네임이 있습니다.'); return false;}
       fetchData()
       e.target.mb_nick.blur()
       alertOpen('닉네임 변경 완료')
-      //alert("닉네임 변경 완료")
     }
   }
 

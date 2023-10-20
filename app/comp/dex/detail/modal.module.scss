@@ -83,7 +83,7 @@
         .modal {
             background-image: url("/img/detail/modal_skill.png");
             background-repeat: no-repeat;
-            background-size: 600px 740px;
+            background-size: 600px 680px;
             text-shadow: 2px 1px 0 #1f93ff;
             margin: 0 20px;
             position: absolute;
@@ -98,7 +98,7 @@
                 }
                 .skill_list {
                     width: 440px;
-                    height: 500px;
+                    height: 450px;
                     margin: 20px auto;
                     overflow: scroll;
                     overflow-x: hidden;
@@ -110,6 +110,7 @@
                             font-size: 22px;
                             padding: 10px 0;
                             cursor: pointer;
+                            color: #00f3ff;
                             &::before {
                                 content: "●";
                                 font-size: 8px;
@@ -140,7 +141,7 @@
             }
             .close_btn {
                 position: absolute;
-                bottom: 26px;
+                top: 616px;
                 > p {
                     width: 200px;
                     margin: 0 200px;
@@ -241,7 +242,7 @@
             .modal {
                 background-image: url(/img/detail/modal_skill.png);
                 background-repeat: no-repeat;
-                background-size: 100% 90%;
+                background-size: 100% 75%;
                 text-shadow: 2px 1px 0 #1f93ff;
                 margin: auto;
                 position: absolute;
@@ -251,7 +252,7 @@
                     width: 90%;
                     margin: 0 auto;
                     h3 {
-                        padding: 32px 0;
+                        padding: 25px 0;
                         font-size: 22px;
                         text-align: center;
                     }
@@ -269,6 +270,7 @@
                                 font-size: 22px;
                                 padding: 10px 0;
                                 cursor: pointer;
+                                color: #00f3ff;
                                 &::before {
                                     content: "●";
                                     font-size: 8px;
@@ -300,7 +302,7 @@
                 .close_btn {
                     width: 100%;
                     position: absolute;
-                    bottom: 88px;
+                    top: 506px;
                     text-align: center;
                     margin: 0 auto;
                     > p {
@@ -404,7 +406,7 @@
             .modal {
                 background-image: url(/img/detail/modal_skill.png);
                 background-repeat: no-repeat;
-                background-size: 100% 90%;
+                background-size: 100% 65%;
                 text-shadow: 2px 1px 0 #1f93ff;
                 margin: auto;
                 position: absolute;
@@ -414,8 +416,8 @@
                     width: 90%;
                     margin: 0 auto;
                     h3 {
-                        padding: 32px 0;
-                        font-size: 22px;
+                        padding: 20px 0;
+                        font-size: 20px;
                         text-align: center;
                     }
                     .skill_list {
@@ -429,8 +431,9 @@
                                 display: flex;
                                 align-items: center;
                                 gap: 16px;
-                                font-size: 22px;
+                                font-size: 20px;
                                 padding: 10px 0;
+                                color: #00f3ff;
                                 cursor: pointer;
                                 &::before {
                                     content: "●";
@@ -443,7 +446,7 @@
                                 width: 90%;
                                 height: auto;
                                 padding: 6px 0 6px 36px;
-                                font-size: 18px;
+                                font-size: 16px;
                                 > span {
                                 }
                             }
@@ -463,7 +466,7 @@
                 .close_btn {
                     width: 100%;
                     position: absolute;
-                    bottom: 88px;
+                    top: 435px;
                     text-align: center;
                     margin: 0 auto;
                     > p {

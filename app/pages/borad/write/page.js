@@ -213,6 +213,17 @@ export default function page() {
   //디지몬 json 배열로 변경
   const krDigimon = krDigimonData.content;
 
+  // json배열 섞기
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+// JSON 데이터를 복제한 후 섞기
+const RandomkrDigimon = [...krDigimon]; 
+shuffleArray(RandomkrDigimon ); 
+
   //디지몬 검색
   const [searchByName, setSearchByName] = useState(''); 
   const [searchResult, setSearchResult] = useState([]);
@@ -227,11 +238,13 @@ export default function page() {
   };
   
   const searchKeyPress = (e) => {
-    if (e.key === 'Enter') {
       e.preventDefault(); 
-      letsSearch();
-    }
+      setSearchByName(e.target.value)
   };
+
+  useEffect(()=>{
+    letsSearch();
+  },[searchByName])
 
   //클릭한 디지몬 저장
   const [selectedDigimon, setSelectedDigimon] = useState('');
@@ -351,7 +364,7 @@ export default function page() {
             <div className={style.wrapSearch}>
               <input className={style.searchInput} type='text' 
                 placeholder='디지몬을 검색해보세요'
-                onChange={(e)=> setSearchByName(e.target.value)}
+                onChange={(e)=> searchKeyPress}
                 onKeyPress={searchKeyPress}  
               />
               <div className={style.searchBtn} onClick={letsSearch}>
@@ -361,7 +374,7 @@ export default function page() {
           </div>
 
           <ul className={style.digimonList}>
-            {(showAll ? krDigimon : searchResult).map((digimon) => (
+            {(showAll ? RandomkrDigimon : searchResult).map((digimon) => (
               <li className={style.eachDigimon} key={digimon.id} onClick={()=>selectFinish(digimon)}>
                 <div className={style.cageWhole}>
                   <img className={style.cage} src='/img/board/write/eachDigimonCage.png' />

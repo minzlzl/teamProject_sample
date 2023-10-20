@@ -43,7 +43,6 @@ export default function page() {
     const req = await axios.get(`/api/borad/view/wrong?id=${idParam}`)
     setAnsData(req.data)
   }
-  console.log(data);
   //~~~~~~~~~캐치마인드 크기 조절~~~~~~~~~
   const canvasRef = useRef(null);
   let [canvasWidth, setCanvasWidth]= useState();
@@ -102,7 +101,6 @@ export default function page() {
   };
 
   //정답오답 모달창
-  // const [Oanswer, setOanswer] = useState(true);
   const [Oanswer, setOanswer] = useState(false);
   const [Xanswer, setXanswer] = useState(false);
 
@@ -117,7 +115,11 @@ export default function page() {
     axios.post('/api/borad/view/score',sendScore);
 
     setTimeout(function () {
-      window.location.href = '/pages/borad/list'
+      document.body.style.overflow = 'auto';
+      setOanswer(false);
+      fetchData();
+      getWrdata();
+      getAnsdata();
     }, 3000);
   };
   //오답 함수
@@ -128,10 +130,12 @@ export default function page() {
   //오답에서 예/아니오
   const youSaidYes = function(){
     setXanswer(false);
-    window.location.reload();
+    getAnsdata()
+    document.body.style.overflow = 'auto';
   }
   const youSaidNo = ()=>{
-    window.location.href = '/pages/borad/list'
+    document.body.style.overflow = 'auto';
+    window.location.href = '/pages/borad/list'    
   };
 
   //오답리스트 박스 열기
@@ -152,6 +156,8 @@ export default function page() {
   const moving = (link)=>{
       nav.push(link)
     }
+
+
 
   if(!member || !data || !ansData || !canvasRef) return <Lodding />
   return (
@@ -199,14 +205,26 @@ export default function page() {
           {
             !data?.an_id ?  
             <div className={style.wrapAnswer}>
-              <input className={style.answerInput} type='text' 
-                placeholder='정답을 입력하세요'
-                onChange={(e)=> setAnswerInput(e.target.value)}
-                onKeyPress={inputKeyPress}
-              />
-              <div className={style.inputBtn} onClick={answerCompare}>
-                <img src='/img/board/view/inputBtn.png'/>
-              </div>
+              {
+                (member.mb_id == data.wr_id) ?
+                  <input className={style.answerInput} type='text' 
+                    placeholder='자신의 D.M은 풀 수 없습니다' disabled
+                  />
+                :
+                <input className={style.answerInput} type='text' 
+                  placeholder='정답을 입력하세요'
+                  onChange={(e)=> setAnswerInput(e.target.value)}
+                  onKeyPress={inputKeyPress}
+                />
+              }
+              {
+                (member.mb_id == data.wr_id) ?
+                <></>
+                :
+                <div className={style.inputBtn} onClick={answerCompare}>
+                  <img src='/img/board/view/inputBtn.png'/>
+                </div>
+              }
             </div>
           :
             <div className={style.correct}>

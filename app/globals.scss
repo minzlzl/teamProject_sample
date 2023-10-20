@@ -34,7 +34,7 @@
 
 // 기본폰트 디지몬 font-family: 'neodgm_code';
 // 노토산스 font-family: 'Noto Sans KR', sans-serif;
-body{margin:0; padding:0; height: 100vh; color: #fff; background-color: #000; font-family: 'neodgm_code';}
+body{margin:0; padding:0; height: 100vh; color: #fff; background-color: #000; font-family: 'neodgm_code'; overflow: auto;}
 p,h1,ul,li,figure,h2,h3 {margin:0;padding:0; font-family: 'neodgm_code'; color:#fff}
 span {color:#fff;}
 ul {list-style: none;}

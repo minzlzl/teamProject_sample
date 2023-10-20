@@ -18,7 +18,7 @@ export default function page() {
       setMember(mb.data);
   }
   async function ranking(){
-    const res = await axios.get('/api/rank');
+    const res = await axios.post('/api/rank');
     setRrk(res.data)
   }
 

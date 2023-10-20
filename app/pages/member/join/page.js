@@ -8,6 +8,7 @@ import Join4 from '@/app/comp/member/join/Join4';
 import Join5 from '@/app/comp/member/join/Join5';
 import Join6 from '@/app/comp/member/join/Join6';
 import Write from '@/app/comp/member/join/Write';
+import { useRouter } from 'next/navigation';
 
 export default function page() {
   let [test,setTest] = useState(1)
@@ -19,12 +20,13 @@ export default function page() {
   let [uimg, setUimg] = useState();
   let [cc,setCc] = useState();
   let [userData,setUserData] = useState();
+  const n = useRouter();
 
   useEffect(()=>{
     setTest(list);
     const id = sessionStorage.u_id;
-    setMb_id(id);
-
+    !id ? n.push('/pages/intro') : setMb_id(id);
+    //setMb_id(id);
     const date = new Date();
     const y = date.getFullYear();
     const m = date.getMonth() + 1;
